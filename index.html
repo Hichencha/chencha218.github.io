@@ -240,7 +240,7 @@
               
                 
                 <a class="post-title-link" href="/2016/04/17/Mac上搭建Hexo-Github博客/" itemprop="url">
-                  Mac上搭建Hexo+Github博客
+                  Mac上使用Hexo+Github搭建个人博客
                 </a>
               
             
@@ -292,14 +292,14 @@
 
           
          
-		  	 <span id="/2016/04/17/Mac上搭建Hexo-Github博客/"class="leancloud_visitors"  data-flag-title="Mac上搭建Hexo+Github博客">
+		  	 <span id="/2016/04/17/Mac上搭建Hexo-Github博客/"class="leancloud_visitors"  data-flag-title="Mac上使用Hexo+Github搭建个人博客">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
 
           
           
-             <span id="/2016/04/17/Mac上搭建Hexo-Github博客/" class="leancloud_visitors" data-flag-title="Mac上搭建Hexo+Github博客">
+             <span id="/2016/04/17/Mac上搭建Hexo-Github博客/" class="leancloud_visitors" data-flag-title="Mac上使用Hexo+Github搭建个人博客">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -322,56 +322,39 @@
 
       
         
-          
-            <p> <strong>这篇文章记录自己在Mac上搭建Hexo博客遇到的一些问题，写下来主要是记录自己踩过的一些坑和加深自 己的一下印象。希望对你有所帮助。</strong></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>git <br></li>
-<li>node.js 用来生成静态页面 </li>
-</ol>
-<hr>
+          <p> <strong>这篇文章记录自己在Mac上使用Hexo和Github搭建博客遇到的一些问题和自己踩过的一些坑。希望对你有所帮助。</strong></p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><h5 id="1-git"><a href="#1-git" class="headerlink" title="1. git"></a>1. git</h5><h5 id="2-node-js-用来生成静态页面"><a href="#2-node-js-用来生成静态页面" class="headerlink" title="2. node.js 用来生成静态页面"></a>2. node.js 用来生成静态页面</h5><hr>
 <p> <strong>由于Mac上自带的git，所以只需要我们下载安装node.js就可以  node.js网址:</strong></p>
-<p> <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-<h2 id="创建一个Hexo-空文件夹备用"><a href="#创建一个Hexo-空文件夹备用" class="headerlink" title="创建一个Hexo 空文件夹备用"></a>创建一个Hexo 空文件夹备用</h2><h3 id="1-安装-Node-js"><a href="#1-安装-Node-js" class="headerlink" title="1.安装 Node.js"></a>1.安装 Node.js</h3><p><strong>git 和node.js安装好的话就可以进行安装Hexo,在终端下输入:</strong></p>
+<h2 id="https-nodejs-org-en"><a href="#https-nodejs-org-en" class="headerlink" title=" https://nodejs.org/en/"></a> <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></h2><h4 id="创建一个Hexo-空文件夹备用"><a href="#创建一个Hexo-空文件夹备用" class="headerlink" title="创建一个Hexo 空文件夹备用"></a>创建一个Hexo 空文件夹备用</h4><h5 id="1-安装-Node-js-（一直下一步就ok）"><a href="#1-安装-Node-js-（一直下一步就ok）" class="headerlink" title="1.安装 Node.js （一直下一步就ok）"></a>1.安装 Node.js （一直下一步就ok）</h5><p><strong>git 和node.js安装好的话就可以进行安装Hexo,在终端下输入:</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
 <p> <strong>按enter后需要输入你mac登录密码</strong></p>
-<h3 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2. 初始化"></a>2. 初始化</h3><p> <strong>在终端cd到你建立的文件夹名称下，执行:</strong></p>
+<h5 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2. 初始化"></a>2. 初始化</h5><p> <strong>在终端cd到你建立的文件夹名称下执行:</strong></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 文件路径</span><br></pre></td></tr></table></figure>
-<p> 然后执行:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-执行安装"><a href="#3-执行安装" class="headerlink" title="3. 执行安装:"></a>3. 执行安装:</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="4-执行如下命令，开启hexo-服务："><a href="#4-执行如下命令，开启hexo-服务：" class="headerlink" title="4. 执行如下命令，开启hexo 服务："></a>4. 执行如下命令，开启hexo 服务：</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="5-执行生成静态页面："><a href="#5-执行生成静态页面：" class="headerlink" title="5. 执行生成静态页面："></a>5. 执行生成静态页面：</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p> <strong>以上命令（$ hexo init）这里开始安装，有可能网络不好出现错误重复安装一下就可以了。有的地区安装不成功需要翻墙，（$ hexo s） 安启动成功，在浏览器中访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 如果访问成功说明 hexo 安装成功.</strong></p>
-<h2 id="关联-Github"><a href="#关联-Github" class="headerlink" title="关联 Github"></a>关联 Github</h2><h3 id="1-首先我们需要获取到-ssh-key"><a href="#1-首先我们需要获取到-ssh-key" class="headerlink" title="1. 首先我们需要获取到 ssh key"></a>1. 首先我们需要获取到 ssh key</h3><p> <strong>可执行一下命令来检查ssh key是否存在：</strong></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
-<p>  <strong>如有文件  id_rsa.pub 和 id_dsa.pub</strong></p>
-<h3 id="1-生成ssh-key"><a href="#1-生成ssh-key" class="headerlink" title="1. 生成ssh key:"></a>1. 生成ssh key:</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的github注册时邮箱“</span></span><br></pre></td></tr></table></figure>
-<p>  按回车出现下图：<br>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh.png" alt=".ssh ~ 安装提示"><br>  是否创建生成秘钥，选Y ，然后会让输入mac的密码完成后会出现下图:</p>
-<h2 id=""><a href="#" class="headerlink" title="  "></a>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh2.png" alt=".ssh ~ 安装成功"></h2><h3 id="2-打开Github-添加-ssh-key到Github"><a href="#2-打开Github-添加-ssh-key到Github" class="headerlink" title="2. 打开Github 添加 ssh key到Github"></a>2. 打开Github 添加 ssh key到Github</h3><p>  <strong> 进入Github –&gt; Settings –&gt; SSH Keys –&gt; add SSH Keys </strong></p>
-<p>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh3.png" alt=".ssh ~ github设置"></p>
-<p>  <strong>key值可以通过终端命令来复制：</strong></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>  <strong>Title里任意添加一个标题，把复制的内容粘贴到Key里面点击下方Add key绿色按钮即可.</strong><br> &lt;！– more –&gt;</p>
-<h3 id="3-创建Github库"><a href="#3-创建Github库" class="headerlink" title="3. 创建Github库"></a>3. 创建Github库</h3><p>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh4.png" alt="Github库"></p>
-<p>  <strong>创建库名要和你的登录名一样</strong></p>
-<h2 id="-1"><a href="#-1" class="headerlink" title="  "></a>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh5.png" alt="name.github.io"></h2><h3 id="4-打开Github客户端"><a href="#4-打开Github客户端" class="headerlink" title="4. 打开Github客户端"></a>4. 打开Github客户端</h3><p>  <strong> 这里第一次我使用的是github客户端clone的代码，当然你可以在终端使用命令行clone </strong></p>
-<p>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/img_ssh6.png" alt="Github客户端"></p>
-<p>  <strong> Clone 你在github上创建的 名称.github.io 这个库完成后，我们可以进行设置一下hexo主题。 </strong> </p>
-<h2 id="设置Hexo主题："><a href="#设置Hexo主题：" class="headerlink" title="设置Hexo主题："></a>设置Hexo主题：</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 本地目录</span><br></pre></td></tr></table></figure>
+<p> <strong>然后执行:</strong><br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-执行安装"><a href="#3-执行安装" class="headerlink" title="3. 执行安装:"></a>3. 执行安装:</h5> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h5 id="4-执行如下命令，开启hexo服务："><a href="#4-执行如下命令，开启hexo服务：" class="headerlink" title="4. 执行如下命令，开启hexo服务："></a>4. 执行如下命令，开启hexo服务：</h5> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<h5 id="5-执行生成静态页面："><a href="#5-执行生成静态页面：" class="headerlink" title="5. 执行生成静态页面："></a>5. 执行生成静态页面：</h5> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p> <strong>以上命令（$ hexo init）这里开始安装，有可能网络不好出现错误重复安装一下就可以了。有的地区安装不成功需要翻墙，（$ hexo s） 安启动成功，在浏览器中访问 <a href="http://localhost:4000">http://localhost:4000</a> 如果访问成功说明 hexo 安装成功.</strong></p>
 <hr>
-<p>  <strong>执行下面的命令(下面是一个主题)</strong></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next them</span><br></pre></td></tr></table></figure>
-<h2 id="具体配置方法可以参照官方文档-http-theme-next-iissnan-com"><a href="#具体配置方法可以参照官方文档-http-theme-next-iissnan-com" class="headerlink" title="  具体配置方法可以参照官方文档 http://theme-next.iissnan.com/"></a>  <strong>具体配置方法可以参照官方文档 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></strong></h2><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>  <strong>我这里是在阿里云买的域名</strong></p>
-<h2 id="-2"><a href="#-2" class="headerlink" title="  "></a>  <img src="http://7xt3mq.com2.z0.glb.clouddn.com/aliy.png" alt="阿里云"></h2><h3 id="1-打开终端-在本地仓库创建-CNAME文件，注意不要后缀名"><a href="#1-打开终端-在本地仓库创建-CNAME文件，注意不要后缀名" class="headerlink" title="1. 打开终端 在本地仓库创建 CNAME文件，注意不要后缀名"></a>1. 打开终端 在本地仓库创建 CNAME文件，注意不要后缀名</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
-<h3 id="2-新建文件夹"><a href="#2-新建文件夹" class="headerlink" title="2. 新建文件夹"></a>2. 新建文件夹</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch CNAME</span><br></pre></td></tr></table></figure>
-<p>  <strong>创建成功后，在文件里写入你的域名比如：chencha.ren</strong></p>
-<h3 id="把Hexo文件夹下public文件夹里面的内容复制到你clone下来的文件夹里面-关键一步-如下图："><a href="#把Hexo文件夹下public文件夹里面的内容复制到你clone下来的文件夹里面-关键一步-如下图：" class="headerlink" title="把Hexo文件夹下public文件夹里面的内容复制到你clone下来的文件夹里面(关键一步)如下图："></a>把Hexo文件夹下public文件夹里面的内容复制到你clone下来的文件夹里面(关键一步)如下图：</h3><p>  <img src="http://7xt3mq.com2.z0.glb.clouddn.com/hexoImg.png" alt="hexo ~ img"></p>
-<h3 id="3-接下来进行如下操作："><a href="#3-接下来进行如下操作：" class="headerlink" title="3. 接下来进行如下操作："></a>3. 接下来进行如下操作：</h3><h4 id="1-跟踪新文件，添加到缓存区"><a href="#1-跟踪新文件，添加到缓存区" class="headerlink" title="1. 跟踪新文件，添加到缓存区:"></a>1. 跟踪新文件，添加到缓存区:</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add CNAME</span><br></pre></td></tr></table></figure>
-<h4 id="2-查看文件状态"><a href="#2-查看文件状态" class="headerlink" title="2. 查看文件状态:"></a>2. 查看文件状态:</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
-<h4 id="3-提交说明"><a href="#3-提交说明" class="headerlink" title="3. 提交说明:"></a>3. 提交说明:</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"内容“</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-提交代码到服务器"><a href="#4-提交代码到服务器" class="headerlink" title="4. 提交代码到服务器:"></a>4. 提交代码到服务器:</h4>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-<p>   <strong>到目前一个简单的Hexo + Github 博客算是搭建完成，你也可以参考官方文档来搭建自己炫酷的博客</strong></p>
-
-          
+<h4 id="关联-Github"><a href="#关联-Github" class="headerlink" title="关联 Github"></a>关联 Github</h4><h5 id="1-首先我们需要获取到-ssh-key"><a href="#1-首先我们需要获取到-ssh-key" class="headerlink" title="1. 首先我们需要获取到 ssh key"></a>1. 首先我们需要获取到 ssh key</h5><p> <strong>可执行一下命令来检查ssh key是否存在：</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>  <strong>如有文件  id_rsa.pub 和 id_dsa.pub，从第2点开始执行</strong></p>
+<h5 id="1-生成ssh-key"><a href="#1-生成ssh-key" class="headerlink" title="1. 生成ssh key:"></a>1. 生成ssh key:</h5>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的github注册时邮箱“</span></span><br></pre></td></tr></table></figure>
+<p>  <strong>按回车出现下图：</strong></p>
+<hr>
+<p>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh.png" alt=".ssh ~ 安装提示"><br>  是否创建生成秘钥，选Y ，然后会让输入mac的密码完成后会出现下图:<br>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh2.png" alt=".ssh ~ 安装成功"></p>
+<hr>
+<p>  ######可以使用微博作为图床也可以使用七牛云作为图床，这里我使用七牛云作为图床: <a href="http://www.qiniu.com/">http://www.qiniu.com/</a> </p>
+<h5 id="2-打开Github-添加-ssh-key到Github"><a href="#2-打开Github-添加-ssh-key到Github" class="headerlink" title="2. 打开Github 添加 ssh key到Github"></a>2. 打开Github 添加 ssh key到Github</h5><p>  <strong> 进入Github –&gt; Settings –&gt; SSH Keys –&gt; add SSH Keys </strong></p>
+<p>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/imgssh3.png" alt=".ssh ~ github设置"></p>
+<p>  <strong>key值可以通过终端命令来复制:</strong></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pbcopy &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>  <strong>Title里任意添加一个标题，把复制的内容粘贴到Key里面点击下方Add key绿色按钮即可.</strong></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/17/Mac上搭建Hexo-Github博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
