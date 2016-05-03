@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="AndroidStudio," />
 
 
 
@@ -80,15 +80,25 @@
 
 
 
-<meta name="description" content="努力让自己变得更好">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈茶">
-<meta property="og:url" content="http://chencha.ren/index.html">
+<meta name="description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
+生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AndroidStudiod如何打包aar文件包和引用小记">
+<meta property="og:url" content="http://chencha.ren/2016/05/03/Androidstudio如何打包aar文件包和引用小记/index.html">
 <meta property="og:site_name" content="陈茶">
-<meta property="og:description" content="努力让自己变得更好">
+<meta property="og:description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
+生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img5.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img3.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img4.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img6.png">
+<meta property="og:updated_time" content="2016-05-03T07:21:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈茶">
-<meta name="twitter:description" content="努力让自己变得更好">
+<meta name="twitter:title" content="AndroidStudiod如何打包aar文件包和引用小记">
+<meta name="twitter:description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
+生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
+<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png">
 
 
 
@@ -106,7 +116,7 @@
   };
 </script>
 
-  <title> 陈茶 </title>
+  <title> AndroidStudiod如何打包aar文件包和引用小记 | 陈茶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +224,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +246,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/03/Androidstudio如何打包aar文件包和引用小记/" itemprop="url">
-                  AndroidStudiod如何打包aar文件包和引用小记
-                </a>
+                AndroidStudiod如何打包aar文件包和引用小记
               
             
           </h1>
@@ -305,166 +310,74 @@
       
 
       
-        
-          <p><strong>写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。</strong></p>
+        <p><strong>写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。</strong></p>
 <h3 id="生成aar包的步骤："><a href="#生成aar包的步骤：" class="headerlink" title="生成aar包的步骤："></a>生成aar包的步骤：</h3><h5 id="1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图："><a href="#1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图：" class="headerlink" title="1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图："></a>1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png" alt="new Module"></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/03/Androidstudio如何打包aar文件包和引用小记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+<a id="more"></a>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img5.png" alt="Library"></p>
+<hr>
+<h5 id="2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："><a href="#2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：" class="headerlink" title="2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："></a>2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img3.png" alt="Rebuild Project"></p>
+<hr>
+<h5 id="3-然后在你创建的Android-Library目录下找到生成的aar文件："><a href="#3-然后在你创建的Android-Library目录下找到生成的aar文件：" class="headerlink" title="3.然后在你创建的Android Library目录下找到生成的aar文件："></a>3.然后在你创建的Android Library目录下找到生成的aar文件：</h5><p><img src="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img4.png" alt=".aar文件"></p>
+<hr>
+<p><strong>到此aar包就算创建成功了</strong></p>
+<h5 id="4-复制aar包到其他工程lib目录下如图："><a href="#4-复制aar包到其他工程lib目录下如图：" class="headerlink" title="4.复制aar包到其他工程lib目录下如图："></a>4.复制aar包到其他工程lib目录下如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img6.png" alt="libs ~ aar"></p>
+<hr>
+<h5 id="5-配置build-gradle文件"><a href="#5-配置build-gradle文件" class="headerlink" title="5.配置build.gradle文件"></a>5.配置build.gradle文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    flatDir &#123;</span><br><span class="line">        <span class="built_in">dirs</span> <span class="string">'libs'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile(name:’chalib′, ext:’aar’)</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>配置完毕，就可以引用你aar里面的方法了。对提高开发效率不言而喻。</strong></p>
+
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/17/Mac上搭建Hexo-Github博客/" itemprop="url">
-                  Mac上使用Hexo+Github搭建个人博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T00:00:00+08:00" content="2016-04-17">
-              2016-04-17
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/17/Mac上搭建Hexo-Github博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/17/Mac上搭建Hexo-Github博客/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-        
-
+            <a href="/tags/AndroidStudio/" rel="tag">#AndroidStudio</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p> <strong>这篇文章记录自己在Mac上使用Hexo和Github搭建博客遇到的一些问题和自己踩过的一些坑。希望对你有所帮助。</strong></p>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><h5 id="1-git"><a href="#1-git" class="headerlink" title="1. git"></a>1. git</h5><h5 id="2-node-js-用来生成静态页面"><a href="#2-node-js-用来生成静态页面" class="headerlink" title="2. node.js 用来生成静态页面"></a>2. node.js 用来生成静态页面</h5><hr>
-<p> <strong>由于Mac上自带的git，所以只需要我们下载安装node.js就可以  node.js网址:</strong></p>
-<p> <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/17/Mac上搭建Hexo-Github博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/17/Mac上搭建Hexo-Github博客/" rel="next" title="Mac上使用Hexo+Github搭建个人博客">
+                <i class="fa fa-chevron-left"></i> Mac上使用Hexo+Github搭建个人博客
+              </a>
+            
           </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -472,6 +385,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/03/Androidstudio如何打包aar文件包和引用小记/"
+           data-title="AndroidStudiod如何打包aar文件包和引用小记" data-url="http://chencha.ren/2016/05/03/Androidstudio如何打包aar文件包和引用小记/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -491,8 +412,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
@@ -542,6 +472,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成aar包的步骤："><span class="nav-number">1.</span> <span class="nav-text">生成aar包的步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图："><span class="nav-number">1.0.1.</span> <span class="nav-text">1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："><span class="nav-number">1.0.2.</span> <span class="nav-text">2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-然后在你创建的Android-Library目录下找到生成的aar文件："><span class="nav-number">1.0.3.</span> <span class="nav-text">3.然后在你创建的Android Library目录下找到生成的aar文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-复制aar包到其他工程lib目录下如图："><span class="nav-number">1.0.4.</span> <span class="nav-text">4.复制aar包到其他工程lib目录下如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-配置build-gradle文件"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.配置build.gradle文件</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -638,6 +579,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
