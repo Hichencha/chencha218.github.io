@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="AndroidStudio," />
+  <meta name="keywords" content="React Native," />
 
 
 
@@ -80,25 +80,22 @@
 
 
 
-<meta name="description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
-生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
+<meta name="description" content="越来越多的开发者学习React Native ，自己以笔记的形式来记录学习过程中遇到的坑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AndroidStudiod如何打包aar文件包和引用小记">
-<meta property="og:url" content="http://chencha.ren/2016/05/03/Androidstudio如何打包aar文件包和引用小记/index.html">
+<meta property="og:title" content="React Native for Android 环境配置">
+<meta property="og:url" content="http://chencha.ren/2016/06/16/ReactNative环境配置/index.html">
 <meta property="og:site_name" content="陈茶">
-<meta property="og:description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
-生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img5.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img3.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img4.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img6.png">
-<meta property="og:updated_time" content="2016-05-03T07:21:29.000Z">
+<meta property="og:description" content="越来越多的开发者学习React Native ，自己以笔记的形式来记录学习过程中遇到的坑。">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn1.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn2.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn3.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn4.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn5.png">
+<meta property="og:updated_time" content="2016-06-16T04:04:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndroidStudiod如何打包aar文件包和引用小记">
-<meta name="twitter:description" content="写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。
-生成aar包的步骤：1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：">
-<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png">
+<meta name="twitter:title" content="React Native for Android 环境配置">
+<meta name="twitter:description" content="越来越多的开发者学习React Native ，自己以笔记的形式来记录学习过程中遇到的坑。">
+<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn1.png">
 
 
 
@@ -116,7 +113,7 @@
   };
 </script>
 
-  <title> AndroidStudiod如何打包aar文件包和引用小记 | 陈茶 </title>
+  <title> React Native for Android 环境配置 | 陈茶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +243,7 @@
             
             
               
-                AndroidStudiod如何打包aar文件包和引用小记
+                React Native for Android 环境配置
               
             
           </h1>
@@ -258,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T00:00:00+08:00" content="2016-05-03">
-              2016-05-03
+            <time itemprop="dateCreated" datetime="2016-06-16T00:00:00+08:00" content="2016-06-16">
+              2016-06-16
             </time>
           </span>
 
@@ -272,8 +269,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/React-Native学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native学习笔记</span>
                   </a>
                 </span>
 
@@ -288,8 +285,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/03/Androidstudio如何打包aar文件包和引用小记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/Androidstudio如何打包aar文件包和引用小记/" itemprop="commentsCount"></span>
+                <a href="/2016/06/16/ReactNative环境配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/ReactNative环境配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,22 +307,51 @@
       
 
       
-        <p><strong>写在前面，Android开发最常见的就是引用Library。过多的Android Library就会让Gradle看起来很繁琐，aar包里包含了Android工程中的src,res,lib等资源文件，这样一来我们在一起工程里面就可以直接进行引用。</strong></p>
-<h3 id="生成aar包的步骤："><a href="#生成aar包的步骤：" class="headerlink" title="生成aar包的步骤："></a>生成aar包的步骤：</h3><h5 id="1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图："><a href="#1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图：" class="headerlink" title="1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图："></a>1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img.png" alt="new Module"></p>
+        <p><strong>越来越多的开发者学习React Native ，自己以笔记的形式来记录学习过程中遇到的坑。</strong></p>
 <a id="more"></a>
-<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img5.png" alt="Library"></p>
+<h6 id="1-Homebrew安装"><a href="#1-Homebrew安装" class="headerlink" title="1. Homebrew安装"></a>1. Homebrew安装</h6><p>  <a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
+<p> <strong>打开终端输入如下代码:</strong></p>
+<blockquote>
+<p>/usr/bin/ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”</p>
+</blockquote>
+<p><strong>如图所示:</strong><br><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn1.png" alt="Homebrew安装"></p>
 <hr>
-<h5 id="2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："><a href="#2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：" class="headerlink" title="2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："></a>2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img3.png" alt="Rebuild Project"></p>
+<p><strong>安装会出现 Press RETURN to continue or any other key to abort 这个提示，这是因为需要验证。按回车输入mac登陆密码</strong></p>
+<blockquote>
+<p>Node.js 和 npm Node.js 需要 4.0 及其以上版本。安装好之后，npm 也有了。</p>
+</blockquote>
+<h6 id="2-通过nvm-安装node-js，安装nvm-可以通过Homebrew安装"><a href="#2-通过nvm-安装node-js，安装nvm-可以通过Homebrew安装" class="headerlink" title="2. 通过nvm 安装node.js，安装nvm 可以通过Homebrew安装"></a>2. 通过nvm 安装node.js，安装nvm 可以通过Homebrew安装</h6> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install nvm</span><br></pre></td></tr></table></figure>
+<p> <strong>如图:</strong></p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn2.png" alt="node.js"></p>
 <hr>
-<h5 id="3-然后在你创建的Android-Library目录下找到生成的aar文件："><a href="#3-然后在你创建的Android-Library目录下找到生成的aar文件：" class="headerlink" title="3.然后在你创建的Android Library目录下找到生成的aar文件："></a>3.然后在你创建的Android Library目录下找到生成的aar文件：</h5><p><img src="http://7xt3mq.com2.z0.glb.clouddn.com/aar_img4.png" alt=".aar文件"></p>
+<p><strong>如果没有.nvm文件就需要创建一个.nvm文件:</strong></p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn3.png" alt="nvm"></p>
 <hr>
-<p><strong>到此aar包就算创建成功了</strong></p>
-<h5 id="4-复制aar包到其他工程lib目录下如图："><a href="#4-复制aar包到其他工程lib目录下如图：" class="headerlink" title="4.复制aar包到其他工程lib目录下如图："></a>4.复制aar包到其他工程lib目录下如图：</h5><p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/aar_img6.png" alt="libs ~ aar"></p>
+<p><strong>打开.bash_profileopen文件:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ open .bash_profile</span><br></pre></td></tr></table></figure>
 <hr>
-<h5 id="5-配置build-gradle文件"><a href="#5-配置build-gradle文件" class="headerlink" title="5.配置build.gradle文件"></a>5.配置build.gradle文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    flatDir &#123;</span><br><span class="line">        <span class="built_in">dirs</span> <span class="string">'libs'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile(name:’chalib′, ext:’aar’)</span><br></pre></td></tr></table></figure>
+<p><strong>如果没有该文件就需要创建一个:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch .bash_profile</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p><strong>配置完毕，就可以引用你aar里面的方法了。对提高开发效率不言而喻。</strong></p>
+<h6 id="3-安装watchman-和-flow"><a href="#3-安装watchman-和-flow" class="headerlink" title="3.  安装watchman 和 flow"></a>3.  安装watchman 和 flow</h6><p> <strong>下面的命令分别是监控文件变化和类型检查的。安装如下：</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install watchman</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install flow</span><br></pre></td></tr></table></figure>
+<hr>
+<p> <strong>安装React Native</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g react-native-cli</span><br></pre></td></tr></table></figure>
+<p> <strong>如图：</strong><br> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn4.png" alt="react-native-cli"></p>
+<hr>
+<p><strong>上面这个错误是因为没有写入权限，在终端输入下面命令：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g react-native-cli</span><br></pre></td></tr></table></figure>
+<h6 id="下面就可以初始化一个React-Native项目，可能需要一段时间项目才能初始化完成"><a href="#下面就可以初始化一个React-Native项目，可能需要一段时间项目才能初始化完成" class="headerlink" title="下面就可以初始化一个React Native项目，可能需要一段时间项目才能初始化完成"></a>下面就可以初始化一个React Native项目，可能需要一段时间项目才能初始化完成</h6> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ react-native init 项目名称</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>项目初始化完成之后，在运行该项目时先看是非设备连接 $ adb devices<br>adb: command not found 找不到设备,前面已经创建了.bash_profileopen<br>打开该文件，添加如下文件：</p>
+<p>export ANDROID_HOME=sdk路径<br>export PATH=$PATH:$ANDROID_HOME/platform-tools 然后重启终端再次查看是否存在设备 </p>
+</blockquote>
+<p><strong>然后运行项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ react-native run-android</span><br></pre></td></tr></table></figure>
+<p><strong>如果出现如下错误,重新安装环境就ok了</strong><br><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/Rn5.png" alt="run"></p>
+<h6 id="参考文章-看官方文档还是很有必要的"><a href="#参考文章-看官方文档还是很有必要的" class="headerlink" title="参考文章 (看官方文档还是很有必要的)"></a>参考文章 (看官方文档还是很有必要的)</h6><p><strong> 1. 秋神的blog <a href="http://www.csdn.net/article/1970-01-01/2825787" target="_blank" rel="external">http://www.csdn.net/article/1970-01-01/2825787</a></strong><br><strong> 2. <a href="http://www.lcode.org" target="_blank" rel="external">http://www.lcode.org</a></strong></p>
 
       
     </div>
@@ -346,7 +372,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/AndroidStudio/" rel="tag">#AndroidStudio</a>
+            <a href="/tags/React-Native/" rel="tag">#React Native</a>
           
         </div>
       
@@ -355,17 +381,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/17/Mac上搭建Hexo-Github博客/" rel="next" title="Mac上使用Hexo+Github搭建个人博客">
-                <i class="fa fa-chevron-left"></i> Mac上使用Hexo+Github搭建个人博客
+              <a href="/2016/05/30/adapter传值给Activity/" rel="next" title="Android 中Adapter传值给Activity">
+                <i class="fa fa-chevron-left"></i> Android 中Adapter传值给Activity
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/30/数据解析遇到的坑/" rel="prev" title="Android 中数据解析时遇到的坑">
-                Android 中数据解析时遇到的坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -391,8 +413,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/03/Androidstudio如何打包aar文件包和引用小记/"
-           data-title="AndroidStudiod如何打包aar文件包和引用小记" data-url="http://chencha.ren/2016/05/03/Androidstudio如何打包aar文件包和引用小记/">
+      <div class="ds-thread" data-thread-key="2016/06/16/ReactNative环境配置/"
+           data-title="React Native for Android 环境配置" data-url="http://chencha.ren/2016/06/16/ReactNative环境配置/">
       </div>
     
   </div>
@@ -483,7 +505,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成aar包的步骤："><span class="nav-number">1.</span> <span class="nav-text">生成aar包的步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-在你Android-studio工程下创建一个Module-记得要选择Android-Library-然后下一步就好如图："><span class="nav-number">1.0.1.</span> <span class="nav-text">1.在你Android studio工程下创建一个Module,记得要选择Android Library.然后下一步就好如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图："><span class="nav-number">1.0.2.</span> <span class="nav-text">2.新建好Module后代码编写完毕，进行编译整个工程就会生成aar包操作步骤如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-然后在你创建的Android-Library目录下找到生成的aar文件："><span class="nav-number">1.0.3.</span> <span class="nav-text">3.然后在你创建的Android Library目录下找到生成的aar文件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-复制aar包到其他工程lib目录下如图："><span class="nav-number">1.0.4.</span> <span class="nav-text">4.复制aar包到其他工程lib目录下如图：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-配置build-gradle文件"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.配置build.gradle文件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-Homebrew安装"><span class="nav-number">1.</span> <span class="nav-text">1. Homebrew安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-通过nvm-安装node-js，安装nvm-可以通过Homebrew安装"><span class="nav-number">2.</span> <span class="nav-text">2. 通过nvm 安装node.js，安装nvm 可以通过Homebrew安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-安装watchman-和-flow"><span class="nav-number">3.</span> <span class="nav-text">3.  安装watchman 和 flow</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#下面就可以初始化一个React-Native项目，可能需要一段时间项目才能初始化完成"><span class="nav-number">4.</span> <span class="nav-text">下面就可以初始化一个React Native项目，可能需要一段时间项目才能初始化完成</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#参考文章-看官方文档还是很有必要的"><span class="nav-number">5.</span> <span class="nav-text">参考文章 (看官方文档还是很有必要的)</span></a></li></ol></div>
             
           </div>
         </section>
