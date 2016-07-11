@@ -239,6 +239,265 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/11/Dialog使用的小技巧/" itemprop="url">
+                  Dialog使用的小技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T00:00:00+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android踩过的坑/" itemprop="url" rel="index">
+                    <span itemprop="name">Android踩过的坑</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/11/Dialog使用的小技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/Dialog使用的小技巧/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+        
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>在项目开发中经常会用到Dialog来做提示框</strong><br> 先上一个效果图：<br>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/dialog.png" alt="Dialog demo"></p>
+<p> 在xml布局文件中写好你需要的样式之后，</p>
+<pre><code class="ruby">Dialog dialog = new Dialog(mContext, R.style.主题);  <span class="regexp">//</span>这是theme主题
+
+     dialog.setContentView(R.layout.dialog布局视图);
+     dialog.show();
+     <span class="regexp">//dialog</span> 宽度设置全屏
+     Window window = dialog.getWindow();
+     <span class="regexp">//</span>此处可以设置dialog显示的位置
+     window.setGravity(Gravity.BOTTOM); 
+     WindowManager.LayoutParams lp = window.getAttributes();
+     lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+     window.setAttributes(lp);
+     <span class="regexp">//</span>这里主要是dialog点击空白区域 dialog消失
+     dialog.setCancelable(<span class="literal">true</span>);
+     dialog.setCanceledOnTouchOutside(<span class="literal">true</span>);
+</code></pre>
+<hr>
+<p><em>之前在xml布局中 使用了android:layout_alignParentBottom=”true”
+</em>这个属性导致了下面两句代码不起作用:<br><em>dialog.setCancelable(true);
+</em>dialog.setCanceledOnTouchOutside(true);<br>这两句代码不起作用<br>*在这我们使用window.setGravity(Gravity.BOTTOM); 让xml布局显示在屏幕的底部</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/11/WebView加载Html出现有时页面显示不全问题/" itemprop="url">
+                  WebView加载Html出现有时页面显示不全问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T00:00:00+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android踩过的坑/" itemprop="url" rel="index">
+                    <span itemprop="name">Android踩过的坑</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/11/WebView加载Html出现有时页面显示不全问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/WebView加载Html出现有时页面显示不全问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+        
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>在项目开发中经常会用到WebView加载Html，有时会遇到url显示不完整的问题下面是我在项目开发中遇到的情况如下图:</strong></p>
+<p> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/html_show.png" alt="WebView show"></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/11/WebView加载Html出现有时页面显示不全问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/16/ReactNative环境配置/" itemprop="url">
                   React Native for Android 环境配置
                 </a>
@@ -863,7 +1122,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -880,7 +1139,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
