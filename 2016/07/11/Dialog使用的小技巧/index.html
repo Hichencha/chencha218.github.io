@@ -80,35 +80,17 @@
 
 
 
-<meta name="description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：  
- 在xml布局文件中写好你需要的样式之后，
-Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
-
-     dialog.setContentView(R.layout.dialog布局视图);
-     dialog.show();
-     //dial">
+<meta name="description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dialog使用的小技巧">
 <meta property="og:url" content="http://chencha.ren/2016/07/11/Dialog使用的小技巧/index.html">
 <meta property="og:site_name" content="陈茶">
-<meta property="og:description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：  
- 在xml布局文件中写好你需要的样式之后，
-Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
-
-     dialog.setContentView(R.layout.dialog布局视图);
-     dialog.show();
-     //dial">
+<meta property="og:description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：">
 <meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/dialog.png">
-<meta property="og:updated_time" content="2016-07-11T13:45:33.000Z">
+<meta property="og:updated_time" content="2016-08-07T08:00:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dialog使用的小技巧">
-<meta name="twitter:description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：  
- 在xml布局文件中写好你需要的样式之后，
-Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
-
-     dialog.setContentView(R.layout.dialog布局视图);
-     dialog.show();
-     //dial">
+<meta name="twitter:description" content="在项目开发中经常会用到Dialog来做提示框 先上一个效果图：">
 <meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/dialog.png">
 
 
@@ -322,6 +304,7 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
 
       
         <p><strong>在项目开发中经常会用到Dialog来做提示框</strong><br> 先上一个效果图：<br>  <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/dialog.png" alt="Dialog demo"></p>
+<a id="more"></a>
 <p> 在xml布局文件中写好你需要的样式之后，</p>
 <pre><code class="ruby">Dialog dialog = new Dialog(mContext, R.style.主题);  <span class="regexp">//</span>这是theme主题
 
@@ -339,9 +322,7 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
      dialog.setCanceledOnTouchOutside(<span class="literal">true</span>);
 </code></pre>
 <hr>
-<p><em>之前在xml布局中 使用了android:layout_alignParentBottom=”true”
-</em>这个属性导致了下面两句代码不起作用:<br><em>dialog.setCancelable(true);
-</em>dialog.setCanceledOnTouchOutside(true);<br>这两句代码不起作用<br>*在这我们使用window.setGravity(Gravity.BOTTOM); 让xml布局显示在屏幕的底部</p>
+<p>之前在xml布局中 使用了android:layout_alignParentBottom=”true”<br>这个属性导致了下面两句代码不起作用:<br>dialog.setCancelable(true);<br>dialog.setCanceledOnTouchOutside(true);<br>这两句代码不起作用<br>在这我们使用window.setGravity(Gravity.BOTTOM); 让xml布局显示在屏幕的底部</p>
 
       
     </div>
@@ -378,6 +359,10 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/06/Retrofit2使用/" rel="prev" title="Retrofit2使用">
+                Retrofit2使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -449,7 +434,7 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -457,7 +442,7 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -466,7 +451,7 @@ Dialog dialog = new Dialog(mContext, R.style.主题);  //这是theme主题
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
