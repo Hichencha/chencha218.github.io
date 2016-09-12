@@ -1,0 +1,724 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="友盟," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android友盟第三方登录">
+<meta property="og:url" content="http://chencha.ren/2016/09/12/Android友盟第三方登录与分享实践/index.html">
+<meta property="og:site_name" content="陈茶">
+<meta property="og:description" content="最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/umeng_1.png">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/umeng_2.png">
+<meta property="og:updated_time" content="2016-09-12T12:51:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android友盟第三方登录">
+<meta name="twitter:description" content="最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。">
+<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/umeng_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Android友盟第三方登录 | 陈茶 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">陈茶</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android友盟第三方登录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-12T00:00:00+08:00" content="2016-09-12">
+              2016-09-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/友盟/" itemprop="url" rel="index">
+                    <span itemprop="name">友盟</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/12/Android友盟第三方登录与分享实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/Android友盟第三方登录与分享实践/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+        
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。</p>
+<a id="more"></a>
+<h5 id="1-申请第三方账号"><a href="#1-申请第三方账号" class="headerlink" title="1.申请第三方账号"></a>1.申请第三方账号</h5><p>  <a href="http://www.umeng.com/" target="_blank" rel="external">友盟</a><br>  <a href="http://open.weibo.com/" target="_blank" rel="external">新浪微博开放平台</a><br>  <a href="https://open.weixin.qq.com/" target="_blank" rel="external">微信开放平台</a><br>  <a href="http://open.qq.com/" target="_blank" rel="external">腾讯开放平台</a></p>
+<p>  具体操作可以跟上面的链接进行操作，也可参照：<a href="http://dev.umeng.com/social/android/operation#1_3" target="_blank" rel="external">http://dev.umeng.com/social/android/operation#1_3</a></p>
+<h5 id="2-注册应用"><a href="#2-注册应用" class="headerlink" title="2.注册应用"></a>2.注册应用</h5><p>  在申请账号的时候需要AppKey在每个开放平台中都提供的有获取应用AppKey的生成工具。每个平台注册的时候要保证他们的Appkey一致不然会出现无法使用的情况。开放平台注册成功了，在友盟注册应用：<a href="http://mobile.umeng.com/apps" target="_blank" rel="external">http://mobile.umeng.com/apps</a></p>
+<h5 id="3-集成友盟SDK"><a href="#3-集成友盟SDK" class="headerlink" title="3.集成友盟SDK"></a>3.集成友盟SDK</h5><p> <a href="http://dev.umeng.com/social/android/sdk-download" target="_blank" rel="external">SDK下载地址</a><br> 目前我使用的是最新的SDK v5.2.1，可自行根据项目需要集成相应的功能。下载下来的SDK目录结构</p>
+<p> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/umeng_1.png" alt="umeng_sdk"></p>
+<p> 拿到了sdk，现在就需要把sdk集成进项目中。如图所示把Platforms目录里面的libs导入项目中，这里我并没有引入res中的资源文件。</p>
+<p> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/umeng_2.png" alt="umeng_libs"></p>
+<p> 需要注意的是，如果项目中用来微信支付功能就不要导入SocialSDK_WeiXin_1.jar包避免冲突。、<br> 引入so文件:</p>
+<blockquote>
+<p>在“src/main”目录中新建名为“jniLibs”的目录，将so文件复制、粘贴到“jniLibs”目录内。</p>
+</blockquote>
+<h5 id="3-在项目中进行注册"><a href="#3-在项目中进行注册" class="headerlink" title="3.在项目中进行注册"></a>3.在项目中进行注册</h5><p> 1.AndroidManifest.xml<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- ##############声明SDK使用的相关权限############ --&gt;</span><br><span class="line"> &lt;!-- 检测网络状态 --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/&gt;</span><br><span class="line"> &lt;!-- 获取mac地址作为用户的备用唯一标识 --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/&gt;</span><br><span class="line"> &lt;!-- 获取用户手机的IMEI，用来唯一的标识用户 --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.READ_PHONE_STATE"/&gt;</span><br><span class="line"> &lt;!-- 缓存资源优先存入SDcard --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/&gt;</span><br><span class="line"> &lt;!-- 允许应用程序联网，以便向我们的服务器端发送数据 --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.INTERNET"/&gt;</span><br><span class="line"> &lt;!-- QQ、QQ空间所需权限 --&gt;</span><br><span class="line"> &lt;uses-permission android:name="android.permission.GET_TASKS"/&gt;</span><br><span class="line"> </span><br><span class="line">  &lt;application</span><br><span class="line">     android:name=".Application"</span><br><span class="line">     android:allowBackup="true"</span><br><span class="line">     android:icon="@mipmap/ic_launcher"</span><br><span class="line">     android:label="@string/app_name"</span><br><span class="line">     android:supportsRtl="true"</span><br><span class="line">     android:theme="@style/AppTheme"&gt;</span><br><span class="line">     &lt;activity android:name=".MainActivity"&gt;</span><br><span class="line">         &lt;intent-filter&gt;</span><br><span class="line">             &lt;action android:name="android.intent.action.MAIN"/&gt;</span><br><span class="line"></span><br><span class="line">             &lt;category android:name="android.intent.category.LAUNCHER"/&gt;</span><br><span class="line">         &lt;/intent-filter&gt;</span><br><span class="line">     &lt;/activity&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &lt;!--微信 必须在wxapi下，记得加上项目的包名--&gt;</span><br><span class="line">     &lt;activity</span><br><span class="line">         android:name=".wxapi.WXEntryActivity"</span><br><span class="line">         android:configChanges="keyboardHidden|orientation|screenSize"</span><br><span class="line">         android:exported="true"</span><br><span class="line">         android:screenOrientation="portrait"</span><br><span class="line">         android:theme="@android:style/Theme.Translucent.NoTitleBar"/&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &lt;!--新浪微博--&gt;</span><br><span class="line">     &lt;activity</span><br><span class="line">         android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"</span><br><span class="line">         android:configChanges="keyboardHidden|orientation"</span><br><span class="line">         android:exported="false"</span><br><span class="line">         android:windowSoftInputMode="adjustResize"&gt;</span><br><span class="line">     &lt;/activity&gt;</span><br><span class="line"></span><br><span class="line">     &lt;service</span><br><span class="line">         android:name="com.sina.weibo.sdk.net.DownloadService"</span><br><span class="line">         android:exported="false"&gt;</span><br><span class="line">     &lt;/service&gt;</span><br><span class="line">     </span><br><span class="line">     &lt;!--QQ、Qzone--&gt;</span><br><span class="line">     &lt;activity</span><br><span class="line">         android:name="com.tencent.tauth.AuthActivity"</span><br><span class="line">         android:launchMode="singleTask"</span><br><span class="line">         android:noHistory="true"&gt;</span><br><span class="line">         &lt;intent-filter&gt;</span><br><span class="line">             &lt;action android:name="android.intent.action.VIEW"/&gt;</span><br><span class="line"></span><br><span class="line">             &lt;category android:name="android.intent.category.DEFAULT"/&gt;</span><br><span class="line">             &lt;category android:name="android.intent.category.BROWSABLE"/&gt;</span><br><span class="line">             &lt;!--tencent你的QQ互联APPID--&gt;</span><br><span class="line">             &lt;data android:scheme="######"/&gt;</span><br><span class="line">         &lt;/intent-filter&gt;</span><br><span class="line">     &lt;/activity&gt;</span><br><span class="line">     &lt;activity</span><br><span class="line">         android:name="com.tencent.connect.common.AssistActivity"</span><br><span class="line">         android:screenOrientation="portrait"</span><br><span class="line">         android:theme="@android:style/Theme.Translucent.NoTitleBar"/&gt;</span><br><span class="line"></span><br><span class="line">     &lt;meta-data</span><br><span class="line">         android:name="UMENG_APPKEY"</span><br><span class="line">         android:value="友盟Id"&gt;&lt;/meta-data&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;/application&gt;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>Application 中注册</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    //开放平台注册的 appId  AppKey</span><br><span class="line"> &#123;</span><br><span class="line">    //微信 appid appsecret</span><br><span class="line">    PlatformConfig.setWeixin("#####", "#####");</span><br><span class="line">    //  新浪微博 appid appsecret</span><br><span class="line">    PlatformConfig.setSinaWeibo("####", "####");</span><br><span class="line">    //qq appid appsecret</span><br><span class="line">    PlatformConfig.setQQZone("####", "#####");</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">以上配置完成，就可以在项目中使用使用友盟提供的接口进行登录操作。</span><br><span class="line"></span><br><span class="line">```ruby</span><br><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    @Bind(R.id.iv_wechat)</span><br><span class="line">    ImageView mWechat;</span><br><span class="line">    @Bind(R.id.iv_qq)</span><br><span class="line">    ImageView mQQ;</span><br><span class="line">    @Bind(R.id.iv_sina)</span><br><span class="line">    ImageView mSina;</span><br><span class="line"></span><br><span class="line">    private UMShareAPI mShareAPI = null;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        //首先获取UMShareAPI</span><br><span class="line">        mShareAPI = UMShareAPI.get(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @OnClick(&#123;R.id.iv_wechat, R.id.iv_qq, R.id.iv_sina&#125;)</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View view) &#123;</span><br><span class="line">//        选取授权平台,并授权</span><br><span class="line">        SHARE_MEDIA platform = null;</span><br><span class="line">        switch (view.getId()) &#123;</span><br><span class="line">            case R.id.iv_wechat:</span><br><span class="line">                platform = SHARE_MEDIA.WEIXIN;</span><br><span class="line">                break;</span><br><span class="line">            case R.id.iv_qq:</span><br><span class="line">                platform = SHARE_MEDIA.QQ;</span><br><span class="line">                break;</span><br><span class="line">            case R.id.iv_sina:</span><br><span class="line">                platform = SHARE_MEDIA.SINA;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        // doOauth接口返回的授权信息</span><br><span class="line">        mShareAPI.doOauthVerify(MainActivity.this, platform, umAuthListener);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private UMAuthListener umAuthListener = new UMAuthListener() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onComplete(SHARE_MEDIA platform, int action, Map&lt;String, String&gt; data) &#123;</span><br><span class="line">            if (data != null) &#123;</span><br><span class="line">                //调用getplatforminfo接口来获取返回值</span><br><span class="line">                mShareAPI.getPlatformInfo(MainActivity.this, platform, umAuthMesListener);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onError(SHARE_MEDIA platform, int action, Throwable t) &#123;</span><br><span class="line">            Toast.makeText(MainActivity.this, &quot;授权失败&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onCancel(SHARE_MEDIA platform, int action) &#123;</span><br><span class="line">            Toast.makeText(MainActivity.this, &quot;授权取消&quot;, Toast.LENGTH_SHORT);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    private UMAuthListener umAuthMesListener = new UMAuthListener() &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onComplete(SHARE_MEDIA share_media, int i, Map&lt;String, String&gt; map) &#123;</span><br><span class="line">            Toast.makeText(MainActivity.this, &quot;授权成&quot;, Toast.LENGTH_SHORT);</span><br><span class="line"></span><br><span class="line">            String m = share_media.toString();</span><br><span class="line">            Iterator&lt;Map.Entry&lt;String, String&gt;&gt; iterator = map.entrySet().iterator();</span><br><span class="line">            while (iterator.hasNext()) &#123;</span><br><span class="line">                Map.Entry&lt;String, String&gt; entry = iterator.next();</span><br><span class="line">                 //再次遍历取出你需要的参数</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onCancel(SHARE_MEDIA share_media, int i) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">   //重写onActivityResult方法</span><br><span class="line">    @Override</span><br><span class="line">    protected void onActivityResult(int requestCode, int resultCode, Intent data) &#123;</span><br><span class="line">        super.onActivityResult(requestCode, resultCode, data);</span><br><span class="line">        mShareAPI.onActivityResult(requestCode, resultCode, data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">值得注意的是友盟提供了一个删除授权使用的接口：</span><br><span class="line"></span><br><span class="line">mShareAPI.deleteOauth(AuthActivity.this, platform, umdelAuthListener);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>到此第三方登录就算完成，是不是很简单。需要我们注意的是注册开放平台的时候要按照流程来。还有就是在应用中注册时保证应用appkey 和 appId 要正确。关于友盟的第三方分享友盟文档中也详细的介绍过了。</p>
+<p>在接入SDK时遇到的一些常见问题和学习资料：</p>
+<p>IT_xiao小巫： <a href="http://blog.csdn.net/wwj_748/article/details/41117173" target="_blank" rel="external">http://blog.csdn.net/wwj_748/article/details/41117173</a><br>友盟社会化分享集成问题索引： <a href="http://bbs.umeng.com/thread-5908-1-1.html" target="_blank" rel="external">http://bbs.umeng.com/thread-5908-1-1.html</a><br>混淆后无法打包成功： <a href="http://bbs.umeng.com/thread-5193-1-1.html" target="_blank" rel="external">http://bbs.umeng.com/thread-5193-1-1.html</a><br>新浪微博提示缺失文件，错误码C8998：<a href="http://bbs.umeng.com/thread-17766-1-1.html" target="_blank" rel="external">http://bbs.umeng.com/thread-17766-1-1.html</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/友盟/" rel="tag">#友盟</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/07/Glide使用笔记/" rel="next" title="Glide使用笔记">
+                <i class="fa fa-chevron-left"></i> Glide使用笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/12/Android友盟第三方登录与分享实践/"
+           data-title="Android友盟第三方登录" data-url="http://chencha.ren/2016/09/12/Android友盟第三方登录与分享实践/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/me.jpg"
+               alt="陈茶" />
+          <p class="site-author-name" itemprop="name">陈茶</p>
+          <p class="site-description motion-element" itemprop="description">付出才会有收获</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-申请第三方账号"><span class="nav-number">1.</span> <span class="nav-text">1.申请第三方账号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-注册应用"><span class="nav-number">2.</span> <span class="nav-text">2.注册应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-集成友盟SDK"><span class="nav-number">3.</span> <span class="nav-text">3.集成友盟SDK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-在项目中进行注册"><span class="nav-number">4.</span> <span class="nav-text">3.在项目中进行注册</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈茶</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chencha"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
