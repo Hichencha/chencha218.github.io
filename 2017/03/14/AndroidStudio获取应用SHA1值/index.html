@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Retrofit2," />
+  <meta name="keywords" content="Android Studio小技巧," />
 
 
 
@@ -80,29 +80,18 @@
 
 
 
-<meta name="description" content="在学习Retrofit之前先看一下官方文档 Retrofit2官网地址：https://github.com/square/retrofit/ 
-
- 在这里我们使用 天气网提供的接口 http://www.weather.com.cn/adat/sk/101010100.html
-添加依赖(app/build.gradle)">
+<meta name="description" content="在集成第三方SDk的时候，都需要一个叫SHA1值的秘钥。以前我们获取SHA1值的时候都是拿第三方平台查看SHA1值的工具来获取的。Android Studio开发工具提供了一个更加便捷的方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Retrofit2使用">
-<meta property="og:url" content="http://chencha.ren/2016/08/06/Retrofit2使用/index.html">
+<meta property="og:title" content="在Android studio查看SHA1值">
+<meta property="og:url" content="http://chencha.ren/2017/03/14/AndroidStudio获取应用SHA1值/index.html">
 <meta property="og:site_name" content="陈茶">
-<meta property="og:description" content="在学习Retrofit之前先看一下官方文档 Retrofit2官网地址：https://github.com/square/retrofit/ 
-
- 在这里我们使用 天气网提供的接口 http://www.weather.com.cn/adat/sk/101010100.html
-添加依赖(app/build.gradle)">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/weather_bean.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/retrofit_interface.png">
-<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/retrofit_get.png">
-<meta property="og:updated_time" content="2016-08-07T07:58:05.000Z">
+<meta property="og:description" content="在集成第三方SDk的时候，都需要一个叫SHA1值的秘钥。以前我们获取SHA1值的时候都是拿第三方平台查看SHA1值的工具来获取的。Android Studio开发工具提供了一个更加便捷的方法。">
+<meta property="og:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/SHA1_get.png">
+<meta property="og:updated_time" content="2017-03-14T12:23:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Retrofit2使用">
-<meta name="twitter:description" content="在学习Retrofit之前先看一下官方文档 Retrofit2官网地址：https://github.com/square/retrofit/ 
-
- 在这里我们使用 天气网提供的接口 http://www.weather.com.cn/adat/sk/101010100.html
-添加依赖(app/build.gradle)">
-<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/weather_bean.png">
+<meta name="twitter:title" content="在Android studio查看SHA1值">
+<meta name="twitter:description" content="在集成第三方SDk的时候，都需要一个叫SHA1值的秘钥。以前我们获取SHA1值的时候都是拿第三方平台查看SHA1值的工具来获取的。Android Studio开发工具提供了一个更加便捷的方法。">
+<meta name="twitter:image" content="http://7xt3mq.com2.z0.glb.qiniucdn.com/SHA1_get.png">
 
 
 
@@ -120,7 +109,7 @@
   };
 </script>
 
-  <title> Retrofit2使用 | 陈茶 </title>
+  <title> 在Android studio查看SHA1值 | 陈茶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +239,7 @@
             
             
               
-                Retrofit2使用
+                在Android studio查看SHA1值
               
             
           </h1>
@@ -262,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-06T00:00:00+08:00" content="2016-08-06">
-              2016-08-06
+            <time itemprop="dateCreated" datetime="2017-03-14T00:00:00+08:00" content="2017-03-14">
+              2017-03-14
             </time>
           </span>
 
@@ -276,8 +265,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
+                  <a href="/categories/Android-Studio小技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Studio小技巧</span>
                   </a>
                 </span>
 
@@ -292,8 +281,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/06/Retrofit2使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/06/Retrofit2使用/" itemprop="commentsCount"></span>
+                <a href="/2017/03/14/AndroidStudio获取应用SHA1值/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/AndroidStudio获取应用SHA1值/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,26 +303,14 @@
       
 
       
-        <h5 id="在学习Retrofit之前先看一下官方文档"><a href="#在学习Retrofit之前先看一下官方文档" class="headerlink" title="在学习Retrofit之前先看一下官方文档"></a>在学习Retrofit之前先看一下官方文档</h5><p> Retrofit2官网地址：<a href="https://github.com/square/retrofit/" target="_blank" rel="external">https://github.com/square/retrofit/</a> </p>
-<hr>
-<p> 在这里我们使用 天气网提供的接口 <a href="http://www.weather.com.cn/adat/sk/101010100.html" target="_blank" rel="external">http://www.weather.com.cn/adat/sk/101010100.html</a></p>
-<h5 id="添加依赖-app-build-gradle"><a href="#添加依赖-app-build-gradle" class="headerlink" title="添加依赖(app/build.gradle)"></a>添加依赖(app/build.gradle)</h5> <a id="more"></a>
+        <p>在集成第三方SDk的时候，都需要一个叫SHA1值的秘钥。以前我们获取SHA1值的时候都是拿第三方平台查看SHA1值的工具来获取的。Android Studio开发工具提供了一个更加便捷的方法。</p>
+ <a id="more"></a>
 <ol>
-<li><p>retrofit2依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Gson依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta3'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在manifests配置文件中加入网络访问权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<li>首先我们要生成App的签名文件</li>
+<li><p>Android Studio 控制台 –&gt; Terminal –&gt; 输入 keytool -list -v -keystore 签名文件路径(比如： /Users/baidumapkey/BaiduDemo.jks)如下图：</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/SHA1_get.png" alt="SHA1 img"></p>
 </li>
 </ol>
-<h5 id="根据接口返回的json先创建一个bean，返回的数据名称要对应"><a href="#根据接口返回的json先创建一个bean，返回的数据名称要对应" class="headerlink" title="根据接口返回的json先创建一个bean，返回的数据名称要对应"></a>根据接口返回的json先创建一个bean，返回的数据名称要对应</h5><p> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/weather_bean.png" alt="weather bean"></p>
-<h5 id="使用Retrofit，我们需要先定义一个对象接口"><a href="#使用Retrofit，我们需要先定义一个对象接口" class="headerlink" title="使用Retrofit，我们需要先定义一个对象接口"></a>使用Retrofit，我们需要先定义一个对象接口</h5><p> 1.动态的Url访问@PATH {}大括号里面的参数在相当于一个占位符,在实际的请求过程中实际的参数会进行替换<br> 2.Call<t><br> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/retrofit_interface.png" alt="retrofit interface"><br> 3.Retrofit2 使用<br>  .baseUrl 请求地址<br>  .addConverterFactory 转化对象<br> 在调用Call对象中的create 或者是 enqueue(Callback<t> callback)就已经进行了请求操作了<br> retrofit请求返回的数据只有两个方法onResponse和onFailure<br> 在onResponse这个方法里我们查看response.body()里面的返回数据<br> <img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/retrofit_get.png" alt="retrofit get"></t></t></p>
-<blockquote>
-<p>demo地址：<a href="https://github.com/chencha218/RetrofitDemo" target="_blank" rel="external">https://github.com/chencha218/RetrofitDemo</a></p>
-</blockquote>
 
       
     </div>
@@ -354,7 +331,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Retrofit2/" rel="tag">#Retrofit2</a>
+            <a href="/tags/Android-Studio小技巧/" rel="tag">#Android Studio小技巧</a>
           
         </div>
       
@@ -363,17 +340,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/11/Dialog使用的小技巧/" rel="next" title="Dialog使用的小技巧">
-                <i class="fa fa-chevron-left"></i> Dialog使用的小技巧
+              <a href="/2017/03/03/AS更新到2.3.0版本出现问题解决方法/" rel="next" title="Android studio 更新到2.3版本遇到的问题">
+                <i class="fa fa-chevron-left"></i> Android studio 更新到2.3版本遇到的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/14/Android微信支付功能填坑之路/" rel="prev" title="Android微信支付功能">
-                Android微信支付功能 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -399,8 +372,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/06/Retrofit2使用/"
-           data-title="Retrofit2使用" data-url="http://chencha.ren/2016/08/06/Retrofit2使用/">
+      <div class="ds-thread" data-thread-key="2017/03/14/AndroidStudio获取应用SHA1值/"
+           data-title="在Android studio查看SHA1值" data-url="http://chencha.ren/2017/03/14/AndroidStudio获取应用SHA1值/">
       </div>
     
   </div>
@@ -491,7 +464,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#在学习Retrofit之前先看一下官方文档"><span class="nav-number">1.</span> <span class="nav-text">在学习Retrofit之前先看一下官方文档</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加依赖-app-build-gradle"><span class="nav-number">2.</span> <span class="nav-text">添加依赖(app/build.gradle)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根据接口返回的json先创建一个bean，返回的数据名称要对应"><span class="nav-number">3.</span> <span class="nav-text">根据接口返回的json先创建一个bean，返回的数据名称要对应</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用Retrofit，我们需要先定义一个对象接口"><span class="nav-number">4.</span> <span class="nav-text">使用Retrofit，我们需要先定义一个对象接口</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
