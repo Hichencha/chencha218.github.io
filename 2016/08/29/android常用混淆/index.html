@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -27,7 +30,12 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -43,7 +51,11 @@
   
 
   
+    
+      
+    
 
+    
   
 
   
@@ -52,16 +64,26 @@
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="混淆," />
@@ -73,7 +95,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -81,10 +103,11 @@
 
 
 <meta name="description" content="记录一些常用的混淆方式。项目要用到友盟，所以把友盟的混淆拷下来。签名之后友盟的功能无法正常使用这个需要注意一下。">
+<meta name="keywords" content="混淆">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android混淆">
-<meta property="og:url" content="http://chencha.ren/2016/08/29/android常用混淆/index.html">
-<meta property="og:site_name" content="陈茶">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/android常用混淆/index.html">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="记录一些常用的混淆方式。项目要用到友盟，所以把友盟的混淆拷下来。签名之后友盟的功能无法正常使用这个需要注意一下。">
 <meta property="og:updated_time" content="2016-09-07T11:17:06.000Z">
 <meta name="twitter:card" content="summary">
@@ -93,21 +116,37 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> Android混淆 | 陈茶 </title>
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/29/android常用混淆/"/>
+
+
+
+
+
+  <title>Android混淆 | Hexo</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -123,34 +162,43 @@
 
 
 
+
+
+
+
+
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">陈茶</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -163,7 +211,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -173,7 +221,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -183,7 +231,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -193,7 +241,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -206,6 +254,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -220,49 +270,64 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/29/android常用混淆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈茶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Android混淆
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">Android混淆</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-29T00:00:00+08:00" content="2016-08-29">
-              2016-08-29
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T00:00:00+08:00">
+                2016-08-29
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/混淆/" itemprop="url" rel="index">
                     <span itemprop="name">混淆</span>
                   </a>
@@ -270,30 +335,26 @@
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/29/android常用混淆/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/android常用混淆/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
-        
+          
 
           
+
+          
+
+          
+
         </div>
       </header>
     
-
 
     <div class="post-body" itemprop="articleBody">
 
@@ -303,20 +364,29 @@
       
         <p>记录一些常用的混淆方式。项目要用到友盟，所以把友盟的混淆拷下来。签名之后友盟的功能无法正常使用这个需要注意一下。</p>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#V7包和V4包</span></span><br><span class="line"><span class="comment"># Keep the support library</span></span><br><span class="line">-keep class android.support.v4.** &#123; *; &#125;</span><br><span class="line">-keep interface android.support.v4.** &#123; *; &#125;</span><br><span class="line"><span class="comment"># Keep the support library</span></span><br><span class="line">-keep class android.support.v7.** &#123; *; &#125;</span><br><span class="line">-keep interface android.support.v7.** &#123; *; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Butterknife7.0</span></span><br><span class="line">-keep class butterknife.** &#123; *; &#125;</span><br><span class="line">-dontwarn butterknife.internal.**</span><br><span class="line">-keep class **$<span class="variable">$ViewBinder</span> &#123; *; &#125;</span><br><span class="line">-keepclasseswithmembernames class * &#123;</span><br><span class="line">   @butterknife.* &lt;fields&gt;;</span><br><span class="line">&#125;</span><br><span class="line">-keepclasseswithmembernames class * &#123;</span><br><span class="line"> @butterknife.* &lt;methods&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#EventBus</span></span><br><span class="line">-keepclassmembers class ** &#123;</span><br><span class="line">    public void onEvent*(**);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Only required if you use AsyncExecutor</span></span><br><span class="line">-keepclassmembers class * extends de.greenrobot.event.util.ThrowableFailureEvent &#123;</span><br><span class="line">    &lt;init&gt;(java.lang.Throwable);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#GSON</span></span><br><span class="line">-keepattributes Signature</span><br><span class="line">-keepattributes *Annotation*</span><br><span class="line">-keep class sun.misc.Unsafe &#123; *; &#125;</span><br><span class="line">-keep class com.google.gson.stream.** &#123; *; &#125;</span><br><span class="line"><span class="comment"># Application classes that will be serialized/deserialized over Gson</span></span><br><span class="line">-keep class com.coco_sh.leegril.model.** &#123; *; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#Glide</span></span><br><span class="line">-keep public class * implements com.bumptech.glide.module.GlideModule</span><br><span class="line">-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** &#123;</span><br><span class="line">  **[] <span class="variable">$VALUES</span>;</span><br><span class="line">  public *;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#okhttputils</span></span><br><span class="line">-dontwarn com.zhy.http.**</span><br><span class="line">-keep class com.zhy.http.**&#123;*;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#okhttp</span></span><br><span class="line">-dontwarn okhttp3.**</span><br><span class="line">-keep class okhttp3.**&#123;*;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#支付宝</span></span><br><span class="line">-dontshrink</span><br><span class="line">-dontpreverify</span><br><span class="line">-dontoptimize</span><br><span class="line">-dontusemixedcaseclassnames</span><br><span class="line"></span><br><span class="line">-flattenpackagehierarchy</span><br><span class="line">-allowaccessmodification</span><br><span class="line">-printmapping map.txt</span><br><span class="line"></span><br><span class="line">-optimizationpasses 7</span><br><span class="line">-verbose</span><br><span class="line">-keepattributes Exceptions,InnerClasses</span><br><span class="line">-dontskipnonpubliclibraryclasses</span><br><span class="line">-dontskipnonpubliclibraryclassmembers</span><br><span class="line">-ignorewarnings</span><br><span class="line"></span><br><span class="line">-keep public class * extends android.app.Activity</span><br><span class="line">-keep public class * extends android.app.Application</span><br><span class="line">-keep public class * extends android.app.Service</span><br><span class="line">-keep public class * extends android.content.BroadcastReceiver</span><br><span class="line">-keep public class * extends android.content.ContentProvider</span><br><span class="line">-keep public class * extends java.lang.Throwable &#123;*;&#125;</span><br><span class="line">-keep public class * extends java.lang.Exception &#123;*;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#-libraryjars libs/alipaySDK-20151215.jar</span></span><br><span class="line"></span><br><span class="line">-keep class com.alipay.android.app.IAlixPay&#123;*;&#125;</span><br><span class="line">-keep class com.alipay.android.app.IAlixPay<span class="variable">$Stub</span>&#123;*;&#125;</span><br><span class="line">-keep class com.alipay.android.app.IRemoteServiceCallback&#123;*;&#125;</span><br><span class="line">-keep class com.alipay.android.app.IRemoteServiceCallback<span class="variable">$Stub</span>&#123;*;&#125;</span><br><span class="line">-keep class com.alipay.sdk.app.PayTask&#123; public *;&#125;</span><br><span class="line">-keep class com.alipay.sdk.app.AuthTask&#123; public *;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-keepclasseswithmembernames class * &#123;</span><br><span class="line">    native &lt;methods&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-keepclasseswithmembers class * &#123;</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-keepclasseswithmembers class * &#123;</span><br><span class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-keepclassmembers class * extends android.app.Activity &#123;</span><br><span class="line">   public void *(android.view.View);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-keepclassmembers enum * &#123;</span><br><span class="line">    public static **[] values();</span><br><span class="line">    public static ** valueOf(java.lang.String);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-keep class * implements android.os.Parcelable &#123;</span><br><span class="line">  public static final android.os.Parcelable<span class="variable">$Creator</span> *;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># adding this in to preserve line numbers so that the stack traces</span></span><br><span class="line"><span class="comment"># can be remapped</span></span><br><span class="line">-renamesourcefileattribute SourceFile</span><br><span class="line">-keepattributes SourceFile,LineNumberTable</span><br><span class="line"></span><br><span class="line"><span class="comment">#okhttputils</span></span><br><span class="line">-dontwarn com.zhy.http.**</span><br><span class="line">-keep class com.zhy.http.**&#123;*;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#okhttp</span></span><br><span class="line">-dontwarn okhttp3.**</span><br><span class="line">-keep class okhttp3.**&#123;*;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#okio</span></span><br><span class="line">-dontwarn okio.**</span><br><span class="line">-keep class okio.**&#123;*;&#125;</span><br><span class="line"><span class="comment">#友盟</span></span><br><span class="line">-dontshrink</span><br><span class="line">-dontoptimize</span><br><span class="line">-dontwarn android.webkit.WebView</span><br><span class="line">-dontwarn com.umeng.**</span><br><span class="line">-dontwarn com.tencent.weibo.sdk.**</span><br><span class="line">-dontwarn com.facebook.**</span><br><span class="line"></span><br><span class="line">-keepattributes Exceptions,InnerClasses,Signature</span><br><span class="line">-keepattributes *Annotation*</span><br><span class="line">-keepattributes SourceFile,LineNumberTable</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-keep public interface com.tencent.**</span><br><span class="line">-keep public interface com.umeng.socialize.**</span><br><span class="line">-keep public interface com.umeng.socialize.sensor.**</span><br><span class="line">-keep public interface com.umeng.scrshot.**</span><br><span class="line"></span><br><span class="line">-keep public class com.umeng.socialize.* &#123;*;&#125;</span><br><span class="line">-keep public class javax.**</span><br><span class="line">-keep public class android.webkit.**</span><br><span class="line"></span><br><span class="line">-keep class com.umeng.scrshot.**</span><br><span class="line">-keep public class com.tencent.** &#123;*;&#125;</span><br><span class="line">-keep class com.umeng.socialize.sensor.**</span><br><span class="line"></span><br><span class="line">-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage &#123;*;&#125;</span><br><span class="line"></span><br><span class="line">-keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage<span class="variable">$IMediaObject</span> &#123;*;&#125;</span><br><span class="line"></span><br><span class="line">-keep public class [your_pkg].R$*&#123;</span><br><span class="line">    public static final int *;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 源文件和行号的信息不混淆</span></span><br><span class="line">-keepattributes SourceFile,LineNumberTable</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#V7包和V4包</span></div><div class="line"><span class="comment"># Keep the support library</span></div><div class="line">-keep class android.support.v4.** &#123; *; &#125;</div><div class="line">-keep interface android.support.v4.** &#123; *; &#125;</div><div class="line"><span class="comment"># Keep the support library</span></div><div class="line">-keep class android.support.v7.** &#123; *; &#125;</div><div class="line">-keep interface android.support.v7.** &#123; *; &#125;</div><div class="line"></div><div class="line"><span class="comment">#Butterknife7.0</span></div><div class="line">-keep class butterknife.** &#123; *; &#125;</div><div class="line">-dontwarn butterknife.internal.**</div><div class="line">-keep class **$<span class="variable">$ViewBinder</span> &#123; *; &#125;</div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line">   @butterknife.* &lt;fields&gt;;</div><div class="line">&#125;</div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line"> @butterknife.* &lt;methods&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">#EventBus</span></div><div class="line">-keepclassmembers class ** &#123;</div><div class="line">    public void onEvent*(**);</div><div class="line">&#125;</div><div class="line"><span class="comment"># Only required if you use AsyncExecutor</span></div><div class="line">-keepclassmembers class * extends de.greenrobot.event.util.ThrowableFailureEvent &#123;</div><div class="line">    &lt;init&gt;(java.lang.Throwable);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#GSON</span></div><div class="line">-keepattributes Signature</div><div class="line">-keepattributes *Annotation*</div><div class="line">-keep class sun.misc.Unsafe &#123; *; &#125;</div><div class="line">-keep class com.google.gson.stream.** &#123; *; &#125;</div><div class="line"><span class="comment"># Application classes that will be serialized/deserialized over Gson</span></div><div class="line">-keep class com.coco_sh.leegril.model.** &#123; *; &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#Glide</span></div><div class="line">-keep public class * implements com.bumptech.glide.module.GlideModule</div><div class="line">-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** &#123;</div><div class="line">  **[] <span class="variable">$VALUES</span>;</div><div class="line">  public *;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">#okhttputils</span></div><div class="line">-dontwarn com.zhy.http.**</div><div class="line">-keep class com.zhy.http.**&#123;*;&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#okhttp</span></div><div class="line">-dontwarn okhttp3.**</div><div class="line">-keep class okhttp3.**&#123;*;&#125;</div><div class="line"></div><div class="line"><span class="comment">#支付宝</span></div><div class="line">-dontshrink</div><div class="line">-dontpreverify</div><div class="line">-dontoptimize</div><div class="line">-dontusemixedcaseclassnames</div><div class="line"></div><div class="line">-flattenpackagehierarchy</div><div class="line">-allowaccessmodification</div><div class="line">-printmapping map.txt</div><div class="line"></div><div class="line">-optimizationpasses 7</div><div class="line">-verbose</div><div class="line">-keepattributes Exceptions,InnerClasses</div><div class="line">-dontskipnonpubliclibraryclasses</div><div class="line">-dontskipnonpubliclibraryclassmembers</div><div class="line">-ignorewarnings</div><div class="line"></div><div class="line">-keep public class * extends android.app.Activity</div><div class="line">-keep public class * extends android.app.Application</div><div class="line">-keep public class * extends android.app.Service</div><div class="line">-keep public class * extends android.content.BroadcastReceiver</div><div class="line">-keep public class * extends android.content.ContentProvider</div><div class="line">-keep public class * extends java.lang.Throwable &#123;*;&#125;</div><div class="line">-keep public class * extends java.lang.Exception &#123;*;&#125;</div><div class="line"></div><div class="line"><span class="comment">#-libraryjars libs/alipaySDK-20151215.jar</span></div><div class="line"></div><div class="line">-keep class com.alipay.android.app.IAlixPay&#123;*;&#125;</div><div class="line">-keep class com.alipay.android.app.IAlixPay<span class="variable">$Stub</span>&#123;*;&#125;</div><div class="line">-keep class com.alipay.android.app.IRemoteServiceCallback&#123;*;&#125;</div><div class="line">-keep class com.alipay.android.app.IRemoteServiceCallback<span class="variable">$Stub</span>&#123;*;&#125;</div><div class="line">-keep class com.alipay.sdk.app.PayTask&#123; public *;&#125;</div><div class="line">-keep class com.alipay.sdk.app.AuthTask&#123; public *;&#125;</div><div class="line"></div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line">    native &lt;methods&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">-keepclasseswithmembers class * &#123;</div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);</div><div class="line">&#125;</div><div class="line"></div><div class="line">-keepclasseswithmembers class * &#123;</div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);</div><div class="line">&#125;</div><div class="line"></div><div class="line">-keepclassmembers class * extends android.app.Activity &#123;</div><div class="line">   public void *(android.view.View);</div><div class="line">&#125;</div><div class="line"></div><div class="line">-keepclassmembers enum * &#123;</div><div class="line">    public static **[] values();</div><div class="line">    public static ** valueOf(java.lang.String);</div><div class="line">&#125;</div><div class="line"></div><div class="line">-keep class * implements android.os.Parcelable &#123;</div><div class="line">  public static final android.os.Parcelable<span class="variable">$Creator</span> *;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment"># adding this in to preserve line numbers so that the stack traces</span></div><div class="line"><span class="comment"># can be remapped</span></div><div class="line">-renamesourcefileattribute SourceFile</div><div class="line">-keepattributes SourceFile,LineNumberTable</div><div class="line"></div><div class="line"><span class="comment">#okhttputils</span></div><div class="line">-dontwarn com.zhy.http.**</div><div class="line">-keep class com.zhy.http.**&#123;*;&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#okhttp</span></div><div class="line">-dontwarn okhttp3.**</div><div class="line">-keep class okhttp3.**&#123;*;&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#okio</span></div><div class="line">-dontwarn okio.**</div><div class="line">-keep class okio.**&#123;*;&#125;</div><div class="line"><span class="comment">#友盟</span></div><div class="line">-dontshrink</div><div class="line">-dontoptimize</div><div class="line">-dontwarn android.webkit.WebView</div><div class="line">-dontwarn com.umeng.**</div><div class="line">-dontwarn com.tencent.weibo.sdk.**</div><div class="line">-dontwarn com.facebook.**</div><div class="line"></div><div class="line">-keepattributes Exceptions,InnerClasses,Signature</div><div class="line">-keepattributes *Annotation*</div><div class="line">-keepattributes SourceFile,LineNumberTable</div><div class="line"></div><div class="line"></div><div class="line">-keep public interface com.tencent.**</div><div class="line">-keep public interface com.umeng.socialize.**</div><div class="line">-keep public interface com.umeng.socialize.sensor.**</div><div class="line">-keep public interface com.umeng.scrshot.**</div><div class="line"></div><div class="line">-keep public class com.umeng.socialize.* &#123;*;&#125;</div><div class="line">-keep public class javax.**</div><div class="line">-keep public class android.webkit.**</div><div class="line"></div><div class="line">-keep class com.umeng.scrshot.**</div><div class="line">-keep public class com.tencent.** &#123;*;&#125;</div><div class="line">-keep class com.umeng.socialize.sensor.**</div><div class="line"></div><div class="line">-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage &#123;*;&#125;</div><div class="line"></div><div class="line">-keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage<span class="variable">$IMediaObject</span> &#123;*;&#125;</div><div class="line"></div><div class="line">-keep public class [your_pkg].R$*&#123;</div><div class="line">    public static final int *;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 源文件和行号的信息不混淆</span></div><div class="line">-keepattributes SourceFile,LineNumberTable</div></pre></td></tr></table></figure>
 
-      
-    </div>
-    
-    <div>
-      
-        
       
     </div>
 
     <div>
       
         
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -324,9 +394,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/混淆/" rel="tag">#混淆</a>
+            <a href="/tags/混淆/" rel="tag"># 混淆</a>
           
         </div>
+      
+
+      
+        
       
 
       
@@ -338,6 +412,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -369,10 +445,6 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/29/android常用混淆/"
-           data-title="Android混淆" data-url="http://chencha.ren/2016/08/29/android常用混淆/">
-      </div>
-    
   </div>
 
 
@@ -394,35 +466,33 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
                alt="陈茶" />
           <p class="site-author-name" itemprop="name">陈茶</p>
-          <p class="site-description motion-element" itemprop="description">付出才会有收获</p>
+           
+              <p class="site-description motion-element" itemprop="description">念念不忘，必有回响</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/">
-              <span class="site-state-item-count">16</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -430,8 +500,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -452,19 +524,13 @@
         
         
 
+        
+
+
       </section>
 
       
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
+
       
 
     </div>
@@ -487,16 +553,18 @@
   <span class="author" itemprop="copyrightHolder">陈茶</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
+
 
         
 
@@ -504,9 +572,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -529,175 +601,112 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
 
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chencha"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
 
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("", "");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
+  
 
   
 
