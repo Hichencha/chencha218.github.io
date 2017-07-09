@@ -1,0 +1,752 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Android  1.Android的动画有哪几种？他们的特点和区别是什么？ a.两种 Tween动画，Frame动画b.Tween动画：可以使视图组件移动，放大，缩小以及产生透明度的变化  Frame动画：传统动画方法，通过顺序的播放排列好的图片来实现 例如：电影 2.说说mvc模式的原理，它在Android中的运用： 3.让Activity变成一个窗口？ 设置Activity属性，在Andr">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android面试题记录二">
+<meta property="og:url" content="http://yoursite.com/2017/07/03/Android面试记录二/index.html">
+<meta property="og:site_name" content="陈茶">
+<meta property="og:description" content="Android  1.Android的动画有哪几种？他们的特点和区别是什么？ a.两种 Tween动画，Frame动画b.Tween动画：可以使视图组件移动，放大，缩小以及产生透明度的变化  Frame动画：传统动画方法，通过顺序的播放排列好的图片来实现 例如：电影 2.说说mvc模式的原理，它在Android中的运用： 3.让Activity变成一个窗口？ 设置Activity属性，在Andr">
+<meta property="og:updated_time" content="2017-07-09T09:36:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android面试题记录二">
+<meta name="twitter:description" content="Android  1.Android的动画有哪几种？他们的特点和区别是什么？ a.两种 Tween动画，Frame动画b.Tween动画：可以使视图组件移动，放大，缩小以及产生透明度的变化  Frame动画：传统动画方法，通过顺序的播放排列好的图片来实现 例如：电影 2.说说mvc模式的原理，它在Android中的运用： 3.让Activity变成一个窗口？ 设置Activity属性，在Andr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/03/Android面试记录二/"/>
+
+
+
+
+
+  <title>Android面试题记录二 | 陈茶</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈茶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/03/Android面试记录二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈茶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈茶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android面试题记录二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T00:00:00+08:00">
+                2017-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Android</p>
+</blockquote>
+<p>1.Android的动画有哪几种？他们的特点和区别是什么？</p>
+<p>a.两种 Tween动画，Frame动画<br>b.Tween动画：可以使视图组件移动，放大，缩小以及产生透明度的变化<br>  Frame动画：传统动画方法，通过顺序的播放排列好的图片来实现 例如：电影</p>
+<p>2.说说mvc模式的原理，它在Android中的运用：</p>
+<p>3.让Activity变成一个窗口？</p>
+<p>设置Activity属性，在AndroidManifest.xml中引用</p>
+<p>4.Android的五种数据存储方式：</p>
+<p>SharedPreferences存储数据 ：Android提供用来储存一些简单的配置信息的一种机制，例如：登录账号，密码。它采用了Map数据结构来存储数据，以键值对的方式存储。在DDMS中的File Explorer中的/data/data/<package names="">/shares_prefs下。使用SharedPreferences缺点：只能在同一个包内使用。</package></p>
+<p>文件存储数据 ：在Android中读取/写入文件的方法，和java中实现I/O的方法是一样的，提供了openFilePut() 和openFileOutput() 方法来读取设备上的文件 栗子：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">String s = <span class="string">"log"</span>;</div><div class="line">FileInputStream fi = openFileInput(s);</div><div class="line">FileOutputStream fo = openFileOutput(s,Context.MODE_PRIVATE);</div></pre></td></tr></table></figure>
+<p>SQLite数据库存储数据 : SQLite是轻量级嵌入式数据库引擎，且只利用很少的内存就有很好的性能，直接通过SQLiteDatabase对象来创建一个数据库。或者继承SQLiteOpenHelper类封装创建和更新数据库使用的逻辑</p>
+<p>网络存储数据: 需要与Android网络数据包交互</p>
+<p>ContentProvider存储数据</p>
+<p>5.Android中常用的五种布局：</p>
+<p>FrameLayout(框架布局) LinearLayout(线性布局) RelativeLayout(相对布局)<br>AbsoluteLayout(绝对布局) TableLayout(表格布局)</p>
+<p>6.什么情况会导致Force Close?如何避免？能否捕获导致其的异常？</p>
+<p>a. 程序出现异常，例如 nullpointer<br>b. 避免：编写更加健壮的代码<br>c. logcat中可查看异常信息</p>
+<p>7.横竖屏切换时候的Activity的生命周期？</p>
+<p>a.不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，默认首先会销毁当前Activity，然后重新加载。切横屏时会执行一次，切竖屏时会执行二次。</p>
+<p>b.设置Actiity的android:configChanges=”orientaion”时，切屏还是会重新调用各个生命周期，切横竖屏幕只会执行一次。</p>
+<p>c.设置Activity的android:configChanges=”orientation|KeyboardHidden|scrennSize”时，<br>切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法。</p>
+<p>8.如何将SQLite数据库（.db文件）与apk文件一起发布？</p>
+<p>将XXX.db 文件复制到工程中res aw目录中，该目标中的文件不会被压缩</p>
+<p>9.如何将打开res aw目录中的数据库文件？</p>
+<p>使用openDatabase方法来打开数据库文件，如果该文件不存在系统会自动在SD卡中创建/sdcard/dictionary目录，并将res/raw目录中的xxx.db复制到自动创建的目录中</p>
+<p>10.Android 中有哪几种解析xml的类？官方推荐哪种？以及它们的原理和区别？</p>
+<p>a.XML解析主要有三种方式，SAX,DOM，PULL<br>b. PC使用Dom相对轻松，但敏感的数据库或者手机上主要采用SAX方式，SAX读取是单向的，优点：不占用内存空间，解析属性方便。缺点：对于嵌套多个分支来说处理不方便。DOM:把整个XML文件加载到内存中去，Android开发可以和XPath结合使用（数据量不大）推荐使用。PULL:J2ME对节点处理比较好，类似SAX方式<br>在J2ME通常使用KXML库来解析</p>
+<p>11.DDMS 和 TraceView的区别？</p>
+<p>a. DDMS是一个程序执行查看器，可以看见线程和堆栈等信息<br>b. TraceView是程序性能分析器</p>
+<p>12.Application类的作用？</p>
+<p>初始化资源，数据共享</p>
+<p>13.谈谈Android的IPC机制？</p>
+<p>IPC是内部进程通信的简称，Android中的IPC机制是为了让Activity和Service之间可以随时进行交互，所以IPC在android中只适用于Activity和Service之间的通信，通过定义AIDL接口文件来定义IPC接口。Service端实现IPC接口，Client端调用IPC接口本地代理。</p>
+<p>14.NDK是什么？</p>
+<p>a. NDK帮助开发者迅速开发C/C++的动态库，并能自动将so和java 应用打成apk包。<br>b. NDK集成了交叉编译器，并提供了相应的mk文件和隔离cpu，平台的差异，开发者只需要修改mk文件就可以创建出so文件</p>
+<p>15.Android的Service生命周期？那个方法可以多次被调用？</p>
+<p>a. startService() : startService() -&gt; onCreate() -&gt; onStart(多次调用)<br>  -&gt; stopService()  -&gt; onDestory() -&gt;stop<br>如果Service还没运行，会先调用onCreate() 然后调用 onStart();如果Service已经运行，直接调用onStart(), 所以一个Service的onStart()方法可能会重复调用多次。<br>stopService的时候直接onDestory(),如果调用者自己直接退出而没有调用stopService的话，Service会一直在后台运行。</p>
+<p>b. bindService() : bindService() -&gt; onCreate() -&gt; onBind() -&gt; onUnbind() -&gt; onDestory() -&gt; stop<br>content会和service生命周期绑定在一起</p>
+<p>16.Android的broadcast生命周期？</p>
+<p>17.Android view,surfaceView,glsurfaceview的区别？<br>18.Android 更新apk的原理？</p>
+<p>19.在工作中你使用过哪些设计模式？</p>
+<p>20.手机安装了多种浏览器，能否指定某个浏览器访问指定页面？</p>
+<p>通过直接发送Url把参数带过去，或者通过Android 配置清单里的intentfilter 中的data属性进行设置</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/29/Android面试之怎么退出App应用/" rel="next" title="Android面试题记录之怎么退出应用">
+                <i class="fa fa-chevron-left"></i> Android面试题记录之怎么退出应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/me.jpg"
+               alt="陈茶" />
+          <p class="site-author-name" itemprop="name">陈茶</p>
+           
+              <p class="site-description motion-element" itemprop="description">念念不忘，必有回响</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈茶</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

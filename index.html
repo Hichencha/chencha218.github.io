@@ -276,6 +276,329 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/03/Android面试记录二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈茶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈茶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/03/Android面试记录二/" itemprop="url">Android面试题记录二</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T00:00:00+08:00">
+                2017-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>Android</p>
+</blockquote>
+<p>1.Android的动画有哪几种？他们的特点和区别是什么？</p>
+<p>a.两种 Tween动画，Frame动画<br>b.Tween动画：可以使视图组件移动，放大，缩小以及产生透明度的变化<br>  Frame动画：传统动画方法，通过顺序的播放排列好的图片来实现 例如：电影</p>
+<p>2.说说mvc模式的原理，它在Android中的运用：</p>
+<p>3.让Activity变成一个窗口？</p>
+<p>设置Activity属性，在AndroidManifest.xml中引用</p>
+<p>4.Android的五种数据存储方式：</p>
+<p>SharedPreferences存储数据 ：Android提供用来储存一些简单的配置信息的一种机制，例如：登录账号，密码。它采用了Map数据结构来存储数据，以键值对的方式存储。在DDMS中的File Explorer中的/data/data/<package names="">/shares_prefs下。使用SharedPreferences缺点：只能在同一个包内使用。</package></p>
+<p>文件存储数据 ：在Android中读取/写入文件的方法，和java中实现I/O的方法是一样的，提供了openFilePut() 和openFileOutput() 方法来读取设备上的文件 栗子：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">String s = <span class="string">"log"</span>;</div><div class="line">FileInputStream fi = openFileInput(s);</div><div class="line">FileOutputStream fo = openFileOutput(s,Context.MODE_PRIVATE);</div></pre></td></tr></table></figure>
+<p>SQLite数据库存储数据 : SQLite是轻量级嵌入式数据库引擎，且只利用很少的内存就有很好的性能，直接通过SQLiteDatabase对象来创建一个数据库。或者继承SQLiteOpenHelper类封装创建和更新数据库使用的逻辑</p>
+<p>网络存储数据: 需要与Android网络数据包交互</p>
+<p>ContentProvider存储数据</p>
+<p>5.Android中常用的五种布局：</p>
+<p>FrameLayout(框架布局) LinearLayout(线性布局) RelativeLayout(相对布局)<br>AbsoluteLayout(绝对布局) TableLayout(表格布局)</p>
+<p>6.什么情况会导致Force Close?如何避免？能否捕获导致其的异常？</p>
+<p>a. 程序出现异常，例如 nullpointer<br>b. 避免：编写更加健壮的代码<br>c. logcat中可查看异常信息</p>
+<p>7.横竖屏切换时候的Activity的生命周期？</p>
+<p>a.不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，默认首先会销毁当前Activity，然后重新加载。切横屏时会执行一次，切竖屏时会执行二次。</p>
+<p>b.设置Actiity的android:configChanges=”orientaion”时，切屏还是会重新调用各个生命周期，切横竖屏幕只会执行一次。</p>
+<p>c.设置Activity的android:configChanges=”orientation|KeyboardHidden|scrennSize”时，<br>切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法。</p>
+<p>8.如何将SQLite数据库（.db文件）与apk文件一起发布？</p>
+<p>将XXX.db 文件复制到工程中res aw目录中，该目标中的文件不会被压缩</p>
+<p>9.如何将打开res aw目录中的数据库文件？</p>
+<p>使用openDatabase方法来打开数据库文件，如果该文件不存在系统会自动在SD卡中创建/sdcard/dictionary目录，并将res/raw目录中的xxx.db复制到自动创建的目录中</p>
+<p>10.Android 中有哪几种解析xml的类？官方推荐哪种？以及它们的原理和区别？</p>
+<p>a.XML解析主要有三种方式，SAX,DOM，PULL<br>b. PC使用Dom相对轻松，但敏感的数据库或者手机上主要采用SAX方式，SAX读取是单向的，优点：不占用内存空间，解析属性方便。缺点：对于嵌套多个分支来说处理不方便。DOM:把整个XML文件加载到内存中去，Android开发可以和XPath结合使用（数据量不大）推荐使用。PULL:J2ME对节点处理比较好，类似SAX方式<br>在J2ME通常使用KXML库来解析</p>
+<p>11.DDMS 和 TraceView的区别？</p>
+<p>a. DDMS是一个程序执行查看器，可以看见线程和堆栈等信息<br>b. TraceView是程序性能分析器</p>
+<p>12.Application类的作用？</p>
+<p>初始化资源，数据共享</p>
+<p>13.谈谈Android的IPC机制？</p>
+<p>IPC是内部进程通信的简称，Android中的IPC机制是为了让Activity和Service之间可以随时进行交互，所以IPC在android中只适用于Activity和Service之间的通信，通过定义AIDL接口文件来定义IPC接口。Service端实现IPC接口，Client端调用IPC接口本地代理。</p>
+<p>14.NDK是什么？</p>
+<p>a. NDK帮助开发者迅速开发C/C++的动态库，并能自动将so和java 应用打成apk包。<br>b. NDK集成了交叉编译器，并提供了相应的mk文件和隔离cpu，平台的差异，开发者只需要修改mk文件就可以创建出so文件</p>
+<p>15.Android的Service生命周期？那个方法可以多次被调用？</p>
+<p>a. startService() : startService() -&gt; onCreate() -&gt; onStart(多次调用)<br>  -&gt; stopService()  -&gt; onDestory() -&gt;stop<br>如果Service还没运行，会先调用onCreate() 然后调用 onStart();如果Service已经运行，直接调用onStart(), 所以一个Service的onStart()方法可能会重复调用多次。<br>stopService的时候直接onDestory(),如果调用者自己直接退出而没有调用stopService的话，Service会一直在后台运行。</p>
+<p>b. bindService() : bindService() -&gt; onCreate() -&gt; onBind() -&gt; onUnbind() -&gt; onDestory() -&gt; stop<br>content会和service生命周期绑定在一起</p>
+<p>16.Android的broadcast生命周期？</p>
+<p>17.Android view,surfaceView,glsurfaceview的区别？<br>18.Android 更新apk的原理？</p>
+<p>19.在工作中你使用过哪些设计模式？</p>
+<p>20.手机安装了多种浏览器，能否指定某个浏览器访问指定页面？</p>
+<p>通过直接发送Url把参数带过去，或者通过Android 配置清单里的intentfilter 中的data属性进行设置</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/Android面试之怎么退出App应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈茶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈茶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/Android面试之怎么退出App应用/" itemprop="url">Android面试题记录之怎么退出应用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T00:00:00+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>a.容器式 建立一个全局容器，把所有的Activity储存起来，退出时循环遍历finish所有Activity</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/finish_container_base.png" alt="container_finish"><br><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/base_container.png" alt="container_base"></p>
+<p>b.通过在BaseActivity 中注册一个广播，当退出时发送一个广播，finish退出</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/broadcasereceiver_finish.png" alt="broadcasereceiver_finish"></p>
+<p>c.进程方式退出应用</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/exit_finish.png" alt="exit_finish"></p>
+<p>d.RS优雅式</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/rs_finish.png" alt="rs_finish"></p>
+<p>e. 懒人式</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/finish.png" alt="finish"></p>
+<p>f. SingleTask改版分为3步</p>
+<p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/singletask_finish.png" alt="dinglrTask_finish"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/28/Android面试题记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -408,8 +731,29 @@
 <p>&lt;service<br> android:name=”.a.cService”<br> android:enabled=”true/&gt;<br>停止一个Service：<br>bindService: unBindService()<br>startServicer:只有调用stopService()或stopSelf()才可以将其停止。</p>
 <p>5.android在子线程中更新UI有几种方式？</p>
 <p>a.Activity.runOnUiThread(Runnable)<br>b.View.post(Runnable)<br>c.广播，子线程中发送广播，主线程接收广播更新UI<br>d.使用Handler(线程间的通信)<br>e. AsyncTask</p>
-<p>6.简述Handler机制？<br>7.ListView优化，多item的重用？<br>8.如果后台的Activity由于某原因被系统回收了，如何在被系统回收之前保存数据并恢复？<br>9.如何提高后台进程存活率？<br>a.Service设置成START_STICKY<br>b.调用startForegound,让Service所在线程成为前台进程<br>c.Service的onDestroy里面重新启动自己<br>d.联系厂商加入白名单</p>
-<p>10.App启动流程，从点击桌面开始？<br>11.Android几种进程？<br>a.前台进程: 与用户正在交互的Activity或者Activity用到的Service等，如果系统内存不足前台进程是最后被杀死的<br>b.可见进程: 处于暂停状态（onPause）的Activity；或者是绑定在其上的Service。可被用户看见，失去焦点就不能与用户交互<br>c.服务进程: 其中运行使用startService方法启动的service，例如后台播放音乐或者下载网络数据，系统所需要的空间不足运行前台进程和可见进程才会被终止<br>d.后台进程:包含目前对用户不可见的Activity的进程已调用Activity的onStop()方法，不为用户当前关心，例如后台挂着qq，当这样的进程系统没有内存就会首先被杀死<br>e.空进程: 不包含任何应用程序的程序组件的进程</p>
+<p>6.简述Handler机制？</p>
+<p>7.ListView优化方案？</p>
+<ol>
+<li>自定义适配器，需要在getViewfang方法中考虑数据源的参数contentView是否为null，如果为null就创建contentView并返回，如果不为null直接使用，在这个方法中尽量可能少的创建view。</li>
+<li>给contentView设置tag、setTag(),传一个viewHolder对象，用于缓存数据，可以达到图像数据异步加载的效果</li>
+<li>如果listView需要显示多item，需要考虑分页加载。</li>
+</ol>
+<p>8.如果后台的Activity由于某原因被系统回收了，如何在被系统回收之前保存数据并恢复？</p>
+<p>a.重写onSaveInstanceState()方法，在该方法中保存数据，该方法会在Activity被回收之前调用。<br>b.重写onRestoreInstanceState()方法从中获取保存好的数据。</p>
+<p>9.如何提高后台进程存活率？</p>
+<p>a.Service设置成START_STICKY<br>b.调用startForegound,让Service所在线程成为前台进程<br>c.Service的onDestroy里面重新启动自己<br>d.联系厂商加入白名单</p>
+<p>10.App启动流程，从点击桌面开始？<br>11.Android几种进程？</p>
+<p>a.前台进程: 与用户正在交互的Activity或者Activity用到的Service等，如果系统内存不足前台进程是最后被杀死的<br>b.可见进程: 处于暂停状态（onPause）的Activity；或者是绑定在其上的Service。可被用户看见，失去焦点就不能与用户交互<br>c.服务进程: 其中运行使用startService方法启动的service，例如后台播放音乐或者下载网络数据，系统所需要的空间不足运行前台进程和可见进程才会被终止<br>d.后台进程:包含目前对用户不可见的Activity的进程已调用Activity的onStop()方法，不为用户当前关心，例如后台挂着qq，当这样的进程系统没有内存就会首先被杀死<br>e.空进程: 不包含任何应用程序的程序组件的进程</p>
+<p>12.怎么退出android 应用？</p>
+<p>详情见：Android面试题记录之怎么退出应用</p>
+<ol>
+<li>谈谈socket,长连接</li>
+</ol>
+<blockquote>
+<p><a href="http://blog.csdn.net/u011240877/article/details/72860483" target="_blank" rel="external">http://blog.csdn.net/u011240877/article/details/72860483</a><br><a href="http://www.jianshu.com/p/089fb79e308b" target="_blank" rel="external">http://www.jianshu.com/p/089fb79e308b</a></p>
+</blockquote>
+<p>15.两个Activity之间跳转时的生命周期？</p>
+<p> a.比如说有两个Activity A和B，当A跳转到B页面时，A会执行onPause()-&gt;B页面执行 onCreate()-&gt;onStart()-&gt;onResume()  -&gt;A页面执行onStop() 备注：B是一个透明的对话框，A就不会调用onStop()方法</p>
 <blockquote>
 <p>相关链接：</p>
 </blockquote>
@@ -874,287 +1218,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/09/3分钟集成极光推送/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈茶">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈茶">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/09/3分钟集成极光推送/" itemprop="url">3分钟集成极光推送</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-09T00:00:00+08:00">
-                2017-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/极光推送/" itemprop="url" rel="index">
-                    <span itemprop="name">极光推送</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Android项目使用到了极光推送服务，这里做一个小结。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/09/3分钟集成极光推送/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/12/Android友盟第三方登录与分享实践/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈茶">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈茶">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/12/Android友盟第三方登录与分享实践/" itemprop="url">Android友盟第三方登录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-12T00:00:00+08:00">
-                2016-09-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/友盟/" itemprop="url" rel="index">
-                    <span itemprop="name">友盟</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/12/Android友盟第三方登录与分享实践/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1199,7 +1267,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
