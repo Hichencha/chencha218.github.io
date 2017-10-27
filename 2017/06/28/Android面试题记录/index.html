@@ -109,7 +109,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/28/Android面试题记录/index.html">
 <meta property="og:site_name" content="陈茶">
 <meta property="og:description" content="JAva面试题   String ,StringBuffer,StringBuilder的区别？ (1) String字符串常量，StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）(2) String类型和StringBuffer类型的主要性能区别就是String是不可改变的对象，在每次对String类型进行改变的时候其实都等同于生成一个新的St">
-<meta property="og:updated_time" content="2017-07-09T08:42:28.000Z">
+<meta property="og:updated_time" content="2017-07-26T02:58:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android面试题记录">
 <meta name="twitter:description" content="JAva面试题   String ,StringBuffer,StringBuilder的区别？ (1) String字符串常量，StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）(2) String类型和StringBuffer类型的主要性能区别就是String是不可改变的对象，在每次对String类型进行改变的时候其实都等同于生成一个新的St">
@@ -414,7 +414,7 @@
 <p>8.如果后台的Activity由于某原因被系统回收了，如何在被系统回收之前保存数据并恢复？</p>
 <p>a.重写onSaveInstanceState()方法，在该方法中保存数据，该方法会在Activity被回收之前调用。<br>b.重写onRestoreInstanceState()方法从中获取保存好的数据。</p>
 <p>9.如何提高后台进程存活率？</p>
-<p>a.Service设置成START_STICKY<br>b.调用startForegound,让Service所在线程成为前台进程<br>c.Service的onDestroy里面重新启动自己<br>d.联系厂商加入白名单</p>
+<p>a.Service设置成START_STICKY<br>b.调用startForegound,让Service所在线程成为前台进程<br>c.Service的onDestroy里面重新启动自己<br>d.联系厂商加入白名单<br>e.做好ui，做好功能</p>
 <p>10.App启动流程，从点击桌面开始？<br>11.Android几种进程？</p>
 <p>a.前台进程: 与用户正在交互的Activity或者Activity用到的Service等，如果系统内存不足前台进程是最后被杀死的<br>b.可见进程: 处于暂停状态（onPause）的Activity；或者是绑定在其上的Service。可被用户看见，失去焦点就不能与用户交互<br>c.服务进程: 其中运行使用startService方法启动的service，例如后台播放音乐或者下载网络数据，系统所需要的空间不足运行前台进程和可见进程才会被终止<br>d.后台进程:包含目前对用户不可见的Activity的进程已调用Activity的onStop()方法，不为用户当前关心，例如后台挂着qq，当这样的进程系统没有内存就会首先被杀死<br>e.空进程: 不包含任何应用程序的程序组件的进程</p>
 <p>12.怎么退出android 应用？</p>
@@ -548,7 +548,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -570,7 +570,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
