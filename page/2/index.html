@@ -276,6 +276,208 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/28/Android面试题记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈茶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈茶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/Android面试题记录/" itemprop="url">Android面试题记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T00:00:00+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>JAva面试题</p>
+</blockquote>
+<ol>
+<li><p>String ,StringBuffer,StringBuilder的区别？</p>
+<p>(1) String字符串常量，StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）<br>(2) String类型和StringBuffer类型的主要性能区别就是String是不可改变的对象，在每次对String<br>类型进行改变的时候其实都等同于生成一个新的String对象，然后将指针指向新的String对象，会对系统性能产生影响，当内存中无引用对象多了以后，JVM的GC就会开始工作，速度会相当慢； 使用StringBuffer类，每次结果都会对StringBuffer对象本身进行操作，而不是重新生成对象，再改变对象引用。<br>StringBuffer是可变的，在缓冲区中追加字符串或者插入指定位置字符串，而且线程安全，比String大多数情况要快，而StringBuilder就是StringBuffer的一个替身而已，就是快，而且线程不安全。</p>
+</li>
+</ol>
+<ol>
+<li><p>抽象类与接口在语法和使用上有哪些区别？</p>
+<p>(1) 抽象类（abstract class）;定义:如果一个类没有包含足够多的信息来描述一个具体的对象，这样的类就叫作抽象类。<br>抽象方法：只声明，不实现。具体的实现需要继承它的子类来实现,抽象类是为了继承而存在的,抽象类不能用来创建对象。也就是说被 abstract修饰的方法 一般抽象方法为public 或者protected 例 如： public acstract String A();<br>(2) 接口 (interface)  定义: 接口抽象方法的集合，通过继承接口的方式来继承接口中的抽象方法例如：interface A(){} ; 接口只能用public static final 修饰；接口中没有构造方式(接口不是类)；接口中的方法必须是抽象的；接口支持多继承（例如：class A implements B,C,…）<br>(3抽象类和接口的区别)<br> 1.抽象类可以提供成员方法的实现，而接口只能存在public abstract方法<br> 2.抽象类中的成员变量可以是各种类型，接口中的成员变量只能是public static final类<br> 3.抽象类可以有静态代码块和静态方法，接口中不能含有静态代码块以及静态方法<br> 4.一个类只能集成一个抽象类，而一个类可以实现多个接口</p>
+<ol>
+<li><p>java中 == 和equals和hashCode的区别？</p>
+<p>“==”用来比较两个变量（基本类型和对象类型）的值是否相等，如果是基本类型的比较直接比较值；如果是对象类型比较那么它比较的是两个对象在栈中的引用（地址）<br>“equals” 通过判断两个对象的地址是否相等<br>“hashCode”它的作用是获取哈希码，这个哈希码的作用是确定该对象在哈希表中索引位置；是返回对象在类存中地址转换成的一个int值，如果没有重写hashCode方法，任何对象的hashCode都不相等</p>
+<blockquote>
+<p><a href="https://juejin.im/post/584ac23061ff4b0058d5250f" target="_blank" rel="external">https://juejin.im/post/584ac23061ff4b0058d5250f</a></p>
+</blockquote>
+</li>
+</ol>
+<p>4.ArrayMap,HashMap,ArrayList,LinkedList的数据结构是什么样的？</p>
+<ol>
+<li>ArrayMap是通过Key– value 映射数据结构的，ArrayMap保持它的映射到一个数组结构，一个Integer数组来储存每一个item的哈希码，一个对象数组来储存键值对，这样避免了为每一个条目都创建一个额外对象，更有效的控制了数组大小，因为它通过二分查找的方式，所以比hashMap慢。</li>
+<li>HashMAp 的底层是基于数组和链表来实现的，查询速度快是因为通过计算哈希码来决定储存位置，HashMap主要通过key的HashCode来计算hash值的；HashMap底层通过链表来解决hash冲突。</li>
+<li>ArrayList 数组集合；ArrayList允许为空；允许重复数据；有序；非线程安全</li>
+<li>LinkedList 基于双向循环链表实现，随机增删较快，存取时需要遍历查询；非线程安全，适合在单线程下使用；LinkedList实现了Serializable接口，支持序列化。<br>ArrayMap 替换 HashMap<br>ArraySet 替换 HashSet<br>SparseArray 替换 HashMap<br>SparseBooleanArray 替换 HashMap<br>SparseIntArray  替换 HashMap<br>SparseLongArray 替换 HashMap<br>LongSparseArray 替换 HashMap</li>
+</ol>
+</li>
+</ol>
+<p>4.wait() 和 sleep() 的区别？</p>
+<p>  wait()用于线程间的通信，wait()只能在同步(synchronize)环境中被调用；进入wait状态的线程能被notify和notifyAll线程唤醒；wait通过有条件的执行，线程会一直处于wait状态；进入wait状态时会释放对象的锁。<br>  sleep()用于短时间暂停当前线程；sleep让线程进入休眠状态；进入sleeping状态的线程不能被notify唤醒；</p>
+<blockquote>
+<p>Android</p>
+</blockquote>
+<p>1.Activity生命周期？</p>
+<p>a. 启动Activity: onCreate() -&gt; onStart() -&gt; onResume()<br>b. Activity退居后台: 当前Activity跳转到新的Activity界面或者按Home键返回主屏：<br>onPause() -&gt; onStop()<br>c. Activity返回前台: onRestart() -&gt; onStart() -&gt; onResume()<br>d. 锁屏: onPause() -&gt; onStop()<br>e. 解锁: onStart() -&gt; onResume()<br>Activity退居后台，且内存不足，系统会杀死这个后台状态的Activity(此时这个activity还在任务栈中，只是引用的对象已经为null)，若再次回到这个Activity时会从新走一次启动Activity的生命周期<br>2.Fragment生命周期？</p>
+<p>3.Activity启动模式介绍？</p>
+<p> Activity的启动模式有四种: standard,singleTop,singleTask,singleInstance<br> AndroidManifest.xml清单文件 android:launchMode属性来指定启动模式</p>
+<p>4.service的启动方式以及区别？怎么停止一个service？</p>
+<p>a.在Context中通过 public boolen bindService(Intent service,ServiceConnection conn,int flags)方法进行Service与Context关联并启动;Service的生命周期依附于Context<br>b.通过public ComponentName startService(Intent service)方法启动一个Service,此时Service生命周期与Context无关。<br>需要注意的是都需要在清单文件 xml中注册Service例如</p>
+<p>&lt;service<br> android:name=”.a.cService”<br> android:enabled=”true/&gt;<br>停止一个Service：<br>bindService: unBindService()<br>startServicer:只有调用stopService()或stopSelf()才可以将其停止。</p>
+<p>5.android在子线程中更新UI有几种方式？</p>
+<p>a.Activity.runOnUiThread(Runnable)<br>b.View.post(Runnable)<br>c.广播，子线程中发送广播，主线程接收广播更新UI<br>d.使用Handler(线程间的通信)<br>e. AsyncTask</p>
+<p>6.简述Handler机制？</p>
+<p>7.ListView优化方案？</p>
+<ol>
+<li>自定义适配器，需要在getViewfang方法中考虑数据源的参数contentView是否为null，如果为null就创建contentView并返回，如果不为null直接使用，在这个方法中尽量可能少的创建view。</li>
+<li>给contentView设置tag、setTag(),传一个viewHolder对象，用于缓存数据，可以达到图像数据异步加载的效果</li>
+<li>如果listView需要显示多item，需要考虑分页加载。</li>
+</ol>
+<p>8.如果后台的Activity由于某原因被系统回收了，如何在被系统回收之前保存数据并恢复？</p>
+<p>a.重写onSaveInstanceState()方法，在该方法中保存数据，该方法会在Activity被回收之前调用。<br>b.重写onRestoreInstanceState()方法从中获取保存好的数据。</p>
+<p>9.如何提高后台进程存活率？</p>
+<p>a.Service设置成START_STICKY<br>b.调用startForegound,让Service所在线程成为前台进程<br>c.Service的onDestroy里面重新启动自己<br>d.联系厂商加入白名单<br>e.做好ui，做好功能</p>
+<p>10.App启动流程，从点击桌面开始？<br>11.Android几种进程？</p>
+<p>a.前台进程: 与用户正在交互的Activity或者Activity用到的Service等，如果系统内存不足前台进程是最后被杀死的<br>b.可见进程: 处于暂停状态（onPause）的Activity；或者是绑定在其上的Service。可被用户看见，失去焦点就不能与用户交互<br>c.服务进程: 其中运行使用startService方法启动的service，例如后台播放音乐或者下载网络数据，系统所需要的空间不足运行前台进程和可见进程才会被终止<br>d.后台进程:包含目前对用户不可见的Activity的进程已调用Activity的onStop()方法，不为用户当前关心，例如后台挂着qq，当这样的进程系统没有内存就会首先被杀死<br>e.空进程: 不包含任何应用程序的程序组件的进程</p>
+<p>12.怎么退出android 应用？</p>
+<p>详情见：Android面试题记录之怎么退出应用</p>
+<ol>
+<li>谈谈socket,长连接</li>
+</ol>
+<blockquote>
+<p><a href="http://blog.csdn.net/u011240877/article/details/72860483" target="_blank" rel="external">http://blog.csdn.net/u011240877/article/details/72860483</a><br><a href="http://www.jianshu.com/p/089fb79e308b" target="_blank" rel="external">http://www.jianshu.com/p/089fb79e308b</a></p>
+</blockquote>
+<p>15.两个Activity之间跳转时的生命周期？</p>
+<p> a.比如说有两个Activity A和B，当A跳转到B页面时，A会执行onPause()-&gt;B页面执行 onCreate()-&gt;onStart()-&gt;onResume()  -&gt;A页面执行onStop() 备注：B是一个透明的对话框，A就不会调用onStop()方法</p>
+<blockquote>
+<p>相关链接：</p>
+</blockquote>
+<p><a href="https://github.com/GeniusVJR/LearningNotes" target="_blank" rel="external">https://github.com/GeniusVJR/LearningNotes</a><br><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md" target="_blank" rel="external">https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md</a><br><a href="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="external">https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md</a><br><a href="https://juejin.im/entry/58cb4e3344d9040069f599aa" target="_blank" rel="external">https://juejin.im/entry/58cb4e3344d9040069f599aa</a><br><a href="https://juejin.im/entry/57466b5e71cfe40068cd862a" target="_blank" rel="external">https://juejin.im/entry/57466b5e71cfe40068cd862a</a><br><a href="https://juejin.im/entry/57e4e1f40bd1d0005bf034fb" target="_blank" rel="external">https://juejin.im/entry/57e4e1f40bd1d0005bf034fb</a><br><a href="https://juejin.im/entry/58ca4c8d128fe1006c7dbc82" target="_blank" rel="external">https://juejin.im/entry/58ca4c8d128fe1006c7dbc82</a><br><a href="https://juejin.im/entry/5942667b61ff4b006cc98a55" target="_blank" rel="external">https://juejin.im/entry/5942667b61ff4b006cc98a55</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/Java定时器用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -517,7 +719,7 @@
           <p>在集成第三方SDk的时候，都需要一个叫SHA1值的秘钥。以前我们获取SHA1值的时候都是拿第三方平台查看SHA1值的工具来获取的。Android Studio开发工具提供了一个更加便捷的方法。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/14/AndroidStudio获取应用SHA1值/#далее" rel="contents">
+            <a class="btn" href="/2017/03/14/AndroidStudio获取应用SHA1值/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -656,7 +858,7 @@
 <p><img src="http://7xt3mq.com2.z0.glb.qiniucdn.com/gradle_er.png" alt="Gradle_er"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/AS更新到2.3.0版本出现问题解决方法/#далее" rel="contents">
+            <a class="btn" href="/2017/03/03/AS更新到2.3.0版本出现问题解决方法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -794,7 +996,7 @@
           <p>Android项目使用到了极光推送服务，这里做一个小结。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/01/09/3分钟集成极光推送/#далее" rel="contents">
+            <a class="btn" href="/2017/01/09/3分钟集成极光推送/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -932,145 +1134,7 @@
           <p>最近项目中使用到了友盟(社会化Android组件)，开始集成的时候没来及细读友盟提供的开发文档。现在来总结一下集成过程中遇到的问题。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/12/Android友盟第三方登录与分享实践/#далее" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/07/Glide使用笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈茶">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈茶">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/07/Glide使用笔记/" itemprop="url">Glide使用笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-07T00:00:00+08:00">
-                2016-09-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Glide图片加载/" itemprop="url" rel="index">
-                    <span itemprop="name">Glide图片加载</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Glide加载图片中遇到的问题，项目中需要加载原图接口并没有返回图片尺寸。Glide提供的方法可以是我们获取到图片的尺寸。这样我们就可以加载原图保证了图片不失真。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/07/Glide使用笔记/#далее" rel="contents">
+            <a class="btn" href="/2016/09/12/Android友盟第三方登录与分享实践/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1156,7 +1220,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1178,7 +1242,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
